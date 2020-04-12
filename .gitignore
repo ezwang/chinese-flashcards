@@ -1,5 +1,8 @@
 Pods/
 build/
 
+*/xcuserdata/*
+*/xcshareddata/*
+
 .DS_Store
 .bundle
