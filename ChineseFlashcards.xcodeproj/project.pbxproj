@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		076EFB462443A01500AE5225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB452443A01500AE5225 /* AppDelegate.swift */; };
+		076EFB482443A01500AE5225 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB472443A01500AE5225 /* SceneDelegate.swift */; };
+		076EFB4A2443A01500AE5225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB492443A01500AE5225 /* ViewController.swift */; };
+		076EFB4D2443A01500AE5225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076EFB4B2443A01500AE5225 /* Main.storyboard */; };
+		076EFB4F2443A01600AE5225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076EFB4E2443A01600AE5225 /* Assets.xcassets */; };
+		076EFB522443A01600AE5225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076EFB502443A01600AE5225 /* LaunchScreen.storyboard */; };
+		076EFB5D2443A01600AE5225 /* ChineseFlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB5C2443A01600AE5225 /* ChineseFlashcardsTests.swift */; };
+		076EFB682443A01600AE5225 /* ChineseFlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB672443A01600AE5225 /* ChineseFlashcardsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		076EFB592443A01600AE5225 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 076EFB3A2443A01500AE5225 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 076EFB412443A01500AE5225;
+			remoteInfo = ChineseFlashcards;
+		};
+		076EFB642443A01600AE5225 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 076EFB3A2443A01500AE5225 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 076EFB412443A01500AE5225;
+			remoteInfo = ChineseFlashcards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		076EFB422443A01500AE5225 /* ChineseFlashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChineseFlashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		076EFB452443A01500AE5225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		076EFB472443A01500AE5225 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		076EFB492443A01500AE5225 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		076EFB4C2443A01500AE5225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		076EFB4E2443A01600AE5225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		076EFB512443A01600AE5225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		076EFB532443A01600AE5225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		076EFB582443A01600AE5225 /* ChineseFlashcardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseFlashcardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		076EFB5C2443A01600AE5225 /* ChineseFlashcardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseFlashcardsTests.swift; sourceTree = "<group>"; };
+		076EFB5E2443A01600AE5225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		076EFB632443A01600AE5225 /* ChineseFlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseFlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		076EFB672443A01600AE5225 /* ChineseFlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseFlashcardsUITests.swift; sourceTree = "<group>"; };
+		076EFB692443A01600AE5225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		076EFB3F2443A01500AE5225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		076EFB552443A01600AE5225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		076EFB602443A01600AE5225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		076EFB392443A01500AE5225 = {
+			isa = PBXGroup;
+			children = (
+				076EFB442443A01500AE5225 /* ChineseFlashcards */,
+				076EFB5B2443A01600AE5225 /* ChineseFlashcardsTests */,
+				076EFB662443A01600AE5225 /* ChineseFlashcardsUITests */,
+				076EFB432443A01500AE5225 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		076EFB432443A01500AE5225 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				076EFB422443A01500AE5225 /* ChineseFlashcards.app */,
+				076EFB582443A01600AE5225 /* ChineseFlashcardsTests.xctest */,
+				076EFB632443A01600AE5225 /* ChineseFlashcardsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		076EFB442443A01500AE5225 /* ChineseFlashcards */ = {
+			isa = PBXGroup;
+			children = (
+				076EFB452443A01500AE5225 /* AppDelegate.swift */,
+				076EFB472443A01500AE5225 /* SceneDelegate.swift */,
+				076EFB492443A01500AE5225 /* ViewController.swift */,
+				076EFB4B2443A01500AE5225 /* Main.storyboard */,
+				076EFB4E2443A01600AE5225 /* Assets.xcassets */,
+				076EFB502443A01600AE5225 /* LaunchScreen.storyboard */,
+				076EFB532443A01600AE5225 /* Info.plist */,
+			);
+			path = ChineseFlashcards;
+			sourceTree = "<group>";
+		};
+		076EFB5B2443A01600AE5225 /* ChineseFlashcardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				076EFB5C2443A01600AE5225 /* ChineseFlashcardsTests.swift */,
+				076EFB5E2443A01600AE5225 /* Info.plist */,
+			);
+			path = ChineseFlashcardsTests;
+			sourceTree = "<group>";
+		};
+		076EFB662443A01600AE5225 /* ChineseFlashcardsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				076EFB672443A01600AE5225 /* ChineseFlashcardsUITests.swift */,
+				076EFB692443A01600AE5225 /* Info.plist */,
+			);
+			path = ChineseFlashcardsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		076EFB412443A01500AE5225 /* ChineseFlashcards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 076EFB6C2443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcards" */;
+			buildPhases = (
+				076EFB3E2443A01500AE5225 /* Sources */,
+				076EFB3F2443A01500AE5225 /* Frameworks */,
+				076EFB402443A01500AE5225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChineseFlashcards;
+			productName = ChineseFlashcards;
+			productReference = 076EFB422443A01500AE5225 /* ChineseFlashcards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		076EFB572443A01600AE5225 /* ChineseFlashcardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 076EFB6F2443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcardsTests" */;
+			buildPhases = (
+				076EFB542443A01600AE5225 /* Sources */,
+				076EFB552443A01600AE5225 /* Frameworks */,
+				076EFB562443A01600AE5225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				076EFB5A2443A01600AE5225 /* PBXTargetDependency */,
+			);
+			name = ChineseFlashcardsTests;
+			productName = ChineseFlashcardsTests;
+			productReference = 076EFB582443A01600AE5225 /* ChineseFlashcardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		076EFB622443A01600AE5225 /* ChineseFlashcardsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 076EFB722443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcardsUITests" */;
+			buildPhases = (
+				076EFB5F2443A01600AE5225 /* Sources */,
+				076EFB602443A01600AE5225 /* Frameworks */,
+				076EFB612443A01600AE5225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				076EFB652443A01600AE5225 /* PBXTargetDependency */,
+			);
+			name = ChineseFlashcardsUITests;
+			productName = ChineseFlashcardsUITests;
+			productReference = 076EFB632443A01600AE5225 /* ChineseFlashcardsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		076EFB3A2443A01500AE5225 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Eric Wang";
+				TargetAttributes = {
+					076EFB412443A01500AE5225 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					076EFB572443A01600AE5225 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 076EFB412443A01500AE5225;
+					};
+					076EFB622443A01600AE5225 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 076EFB412443A01500AE5225;
+					};
+				};
+			};
+			buildConfigurationList = 076EFB3D2443A01500AE5225 /* Build configuration list for PBXProject "ChineseFlashcards" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 076EFB392443A01500AE5225;
+			productRefGroup = 076EFB432443A01500AE5225 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				076EFB412443A01500AE5225 /* ChineseFlashcards */,
+				076EFB572443A01600AE5225 /* ChineseFlashcardsTests */,
+				076EFB622443A01600AE5225 /* ChineseFlashcardsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		076EFB402443A01500AE5225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076EFB522443A01600AE5225 /* LaunchScreen.storyboard in Resources */,
+				076EFB4F2443A01600AE5225 /* Assets.xcassets in Resources */,
+				076EFB4D2443A01500AE5225 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		076EFB562443A01600AE5225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		076EFB612443A01600AE5225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		076EFB3E2443A01500AE5225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076EFB4A2443A01500AE5225 /* ViewController.swift in Sources */,
+				076EFB462443A01500AE5225 /* AppDelegate.swift in Sources */,
+				076EFB482443A01500AE5225 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		076EFB542443A01600AE5225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076EFB5D2443A01600AE5225 /* ChineseFlashcardsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		076EFB5F2443A01600AE5225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076EFB682443A01600AE5225 /* ChineseFlashcardsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		076EFB5A2443A01600AE5225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 076EFB412443A01500AE5225 /* ChineseFlashcards */;
+			targetProxy = 076EFB592443A01600AE5225 /* PBXContainerItemProxy */;
+		};
+		076EFB652443A01600AE5225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 076EFB412443A01500AE5225 /* ChineseFlashcards */;
+			targetProxy = 076EFB642443A01600AE5225 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		076EFB4B2443A01500AE5225 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076EFB4C2443A01500AE5225 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		076EFB502443A01600AE5225 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076EFB512443A01600AE5225 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		076EFB6A2443A01600AE5225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		076EFB6B2443A01600AE5225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		076EFB6D2443A01600AE5225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ChineseFlashcards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cis195.ChineseFlashcards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		076EFB6E2443A01600AE5225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ChineseFlashcards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cis195.ChineseFlashcards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		076EFB702443A01600AE5225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ChineseFlashcardsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cis195.ChineseFlashcardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChineseFlashcards.app/ChineseFlashcards";
+			};
+			name = Debug;
+		};
+		076EFB712443A01600AE5225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ChineseFlashcardsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cis195.ChineseFlashcardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChineseFlashcards.app/ChineseFlashcards";
+			};
+			name = Release;
+		};
+		076EFB732443A01600AE5225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ChineseFlashcardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cis195.ChineseFlashcardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChineseFlashcards;
+			};
+			name = Debug;
+		};
+		076EFB742443A01600AE5225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ChineseFlashcardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cis195.ChineseFlashcardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChineseFlashcards;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		076EFB3D2443A01500AE5225 /* Build configuration list for PBXProject "ChineseFlashcards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076EFB6A2443A01600AE5225 /* Debug */,
+				076EFB6B2443A01600AE5225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		076EFB6C2443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076EFB6D2443A01600AE5225 /* Debug */,
+				076EFB6E2443A01600AE5225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		076EFB6F2443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076EFB702443A01600AE5225 /* Debug */,
+				076EFB712443A01600AE5225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		076EFB722443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcardsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				076EFB732443A01600AE5225 /* Debug */,
+				076EFB742443A01600AE5225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 076EFB3A2443A01500AE5225 /* Project object */;
+}
