@@ -15,6 +15,9 @@
 		076EFB522443A01600AE5225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076EFB502443A01600AE5225 /* LaunchScreen.storyboard */; };
 		076EFB5D2443A01600AE5225 /* ChineseFlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB5C2443A01600AE5225 /* ChineseFlashcardsTests.swift */; };
 		076EFB682443A01600AE5225 /* ChineseFlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB672443A01600AE5225 /* ChineseFlashcardsUITests.swift */; };
+		55CA88978099115AE509CB86 /* Pods_ChineseFlashcards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5F96E8E13882B2D36F3524 /* Pods_ChineseFlashcards.framework */; };
+		8EC44CE0CF328A0D4C8EE16B /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59F738D075A537158767D22 /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework */; };
+		CF39408A1B8C435A957538B6 /* Pods_ChineseFlashcardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FA46EA8261A579C3574578 /* Pods_ChineseFlashcardsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,15 @@
 		076EFB632443A01600AE5225 /* ChineseFlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseFlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		076EFB672443A01600AE5225 /* ChineseFlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseFlashcardsUITests.swift; sourceTree = "<group>"; };
 		076EFB692443A01600AE5225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E21352BF70FE6CE24D46D1A /* Pods-ChineseFlashcards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcards.release.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcards/Pods-ChineseFlashcards.release.xcconfig"; sourceTree = "<group>"; };
+		0F5F96E8E13882B2D36F3524 /* Pods_ChineseFlashcards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseFlashcards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12FA46EA8261A579C3574578 /* Pods_ChineseFlashcardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseFlashcardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A2AA1B16D350BD9927A9690 /* Pods-ChineseFlashcardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcardsTests.debug.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcardsTests/Pods-ChineseFlashcardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DCBD68E857D36172758E619 /* Pods-ChineseFlashcards-ChineseFlashcardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcards-ChineseFlashcardsUITests.release.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcards-ChineseFlashcardsUITests/Pods-ChineseFlashcards-ChineseFlashcardsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		688C1EAE42B8BB12BCBED686 /* Pods-ChineseFlashcards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcards.debug.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcards/Pods-ChineseFlashcards.debug.xcconfig"; sourceTree = "<group>"; };
+		8D1C229904906784662676F3 /* Pods-ChineseFlashcardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcardsTests.release.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcardsTests/Pods-ChineseFlashcardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		C59F738D075A537158767D22 /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7672FA1B6C55437763E0950 /* Pods-ChineseFlashcards-ChineseFlashcardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcards-ChineseFlashcardsUITests.debug.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcards-ChineseFlashcardsUITests/Pods-ChineseFlashcards-ChineseFlashcardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55CA88978099115AE509CB86 /* Pods_ChineseFlashcards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF39408A1B8C435A957538B6 /* Pods_ChineseFlashcardsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC44CE0CF328A0D4C8EE16B /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				076EFB5B2443A01600AE5225 /* ChineseFlashcardsTests */,
 				076EFB662443A01600AE5225 /* ChineseFlashcardsUITests */,
 				076EFB432443A01500AE5225 /* Products */,
+				398C95C194475D2EE34B8617 /* Pods */,
+				BE520082C0F0FF51BF079E7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,30 @@
 			path = ChineseFlashcardsUITests;
 			sourceTree = "<group>";
 		};
+		398C95C194475D2EE34B8617 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				688C1EAE42B8BB12BCBED686 /* Pods-ChineseFlashcards.debug.xcconfig */,
+				0E21352BF70FE6CE24D46D1A /* Pods-ChineseFlashcards.release.xcconfig */,
+				D7672FA1B6C55437763E0950 /* Pods-ChineseFlashcards-ChineseFlashcardsUITests.debug.xcconfig */,
+				4DCBD68E857D36172758E619 /* Pods-ChineseFlashcards-ChineseFlashcardsUITests.release.xcconfig */,
+				4A2AA1B16D350BD9927A9690 /* Pods-ChineseFlashcardsTests.debug.xcconfig */,
+				8D1C229904906784662676F3 /* Pods-ChineseFlashcardsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE520082C0F0FF51BF079E7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F5F96E8E13882B2D36F3524 /* Pods_ChineseFlashcards.framework */,
+				C59F738D075A537158767D22 /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework */,
+				12FA46EA8261A579C3574578 /* Pods_ChineseFlashcardsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 076EFB6C2443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcards" */;
 			buildPhases = (
+				E73A40B169B8A3AA8404E89F /* [CP] Check Pods Manifest.lock */,
 				076EFB3E2443A01500AE5225 /* Sources */,
 				076EFB3F2443A01500AE5225 /* Frameworks */,
 				076EFB402443A01500AE5225 /* Resources */,
+				22CE33E0687055DF9B19AF33 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 076EFB6F2443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcardsTests" */;
 			buildPhases = (
+				11A15DFD48357B9EC7153CD7 /* [CP] Check Pods Manifest.lock */,
 				076EFB542443A01600AE5225 /* Sources */,
 				076EFB552443A01600AE5225 /* Frameworks */,
 				076EFB562443A01600AE5225 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 076EFB722443A01600AE5225 /* Build configuration list for PBXNativeTarget "ChineseFlashcardsUITests" */;
 			buildPhases = (
+				1B87D0F2C021B1D2FBBE510D /* [CP] Check Pods Manifest.lock */,
 				076EFB5F2443A01600AE5225 /* Sources */,
 				076EFB602443A01600AE5225 /* Frameworks */,
 				076EFB612443A01600AE5225 /* Resources */,
+				6DA36D339C7A507E3433ED3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +299,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11A15DFD48357B9EC7153CD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChineseFlashcardsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B87D0F2C021B1D2FBBE510D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChineseFlashcards-ChineseFlashcardsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22CE33E0687055DF9B19AF33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChineseFlashcards/Pods-ChineseFlashcards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChineseFlashcards/Pods-ChineseFlashcards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChineseFlashcards/Pods-ChineseFlashcards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DA36D339C7A507E3433ED3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChineseFlashcards-ChineseFlashcardsUITests/Pods-ChineseFlashcards-ChineseFlashcardsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChineseFlashcards-ChineseFlashcardsUITests/Pods-ChineseFlashcards-ChineseFlashcardsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChineseFlashcards-ChineseFlashcardsUITests/Pods-ChineseFlashcards-ChineseFlashcardsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E73A40B169B8A3AA8404E89F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChineseFlashcards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		076EFB3E2443A01500AE5225 /* Sources */ = {
@@ -432,6 +581,7 @@
 		};
 		076EFB6D2443A01600AE5225 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 688C1EAE42B8BB12BCBED686 /* Pods-ChineseFlashcards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +599,7 @@
 		};
 		076EFB6E2443A01600AE5225 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E21352BF70FE6CE24D46D1A /* Pods-ChineseFlashcards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +617,7 @@
 		};
 		076EFB702443A01600AE5225 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A2AA1B16D350BD9927A9690 /* Pods-ChineseFlashcardsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +639,7 @@
 		};
 		076EFB712443A01600AE5225 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D1C229904906784662676F3 /* Pods-ChineseFlashcardsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +661,7 @@
 		};
 		076EFB732443A01600AE5225 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7672FA1B6C55437763E0950 /* Pods-ChineseFlashcards-ChineseFlashcardsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +681,7 @@
 		};
 		076EFB742443A01600AE5225 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DCBD68E857D36172758E619 /* Pods-ChineseFlashcards-ChineseFlashcardsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
