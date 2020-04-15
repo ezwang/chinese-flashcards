@@ -84,7 +84,7 @@ class DeckListViewController: UITableViewController {
         
         cell.textLabel?.text = decks[indexPath.row].name
         cell.detailTextLabel?.text = decks[indexPath.row].description
-
+        
         return cell
     }
     
@@ -104,12 +104,49 @@ class DeckListViewController: UITableViewController {
     }
 }
 
+class CardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+    
+    @IBOutlet weak var cardView: UITableView!
+    @IBOutlet weak var fieldNew: UITextField!
+    
+    var cards : [Card] = []
+    
+    @IBAction func onAdd(_ sender: Any) {
+        if let text = fieldNew.text {
+            // TODO: properly handle character/meaning/pinyin retrieval
+            cards.append(Card(character: text, meaning: text, pinyin: text))
+        }
+        cardView.reloadData()
+        fieldNew.text = ""
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cards.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "card")!
+        
+        // TODO: properly render character/meaning/pinyin
+        cell.textLabel?.text = cards[indexPath.row].character
+        cell.detailTextLabel?.text = cards[indexPath.row].meaning
+        
+        return cell
+    }
+    
+    override func viewDidLoad() {
+        cardView.delegate = self
+        cardView.dataSource = self
+        cardView.register(UITableViewCell.self, forCellReuseIdentifier: "card")
+    }
+}
+
 class DeckDetailViewController: UIViewController {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDescription: UITextView!
     
     var deck : Deck?
-
+    
     override func viewWillAppear(_ animated: Bool) {
         labelName.text = deck?.name
         labelDescription.text = deck?.description
@@ -122,11 +159,23 @@ class DeckDetailViewController: UIViewController {
         }
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "card" {
+            if let controller = segue.destination as? CardViewController {
+                if let realDeck = deck {
+                    controller.cards = realDeck.cards
+                }
+            }
+        }
+    }
 }
 
 class EditDeckViewController: UIViewController {
     @IBOutlet weak var fieldName: UITextField!
     @IBOutlet weak var fieldDescription: UITextView!
+    
+    var cardController : CardViewController?
     
     @IBAction func onSave(_ sender: UIBarButtonItem) {
         let db = Firestore.firestore()
@@ -134,7 +183,13 @@ class EditDeckViewController: UIViewController {
             "name": self.fieldName.text ?? "",
             "description": self.fieldDescription.text ?? "",
             "owner": Auth.auth().currentUser?.uid ?? "public",
-            "cards": []
+            "cards": cardController?.cards.map { card -> NSDictionary in
+                return [
+                    "meaning": card.meaning,
+                    "character": card.character,
+                    "pinyin": card.pinyin
+                ]
+                } ?? []
         ])
         self.navigationController?.popViewController(animated: true)
     }
@@ -144,6 +199,14 @@ class EditDeckViewController: UIViewController {
         fieldDescription.layer.borderWidth = 1
         fieldDescription.layer.borderColor = UIColor.lightGray.cgColor
         fieldDescription.layer.cornerRadius = 5
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "card" {
+            if let controller = segue.destination as? CardViewController {
+                self.cardController = controller
+            }
+        }
     }
 }
 

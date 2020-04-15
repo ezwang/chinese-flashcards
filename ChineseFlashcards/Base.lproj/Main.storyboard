@@ -227,21 +227,58 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-UF-IYc">
-                                <rect key="frame" x="185" y="736" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-UF-IYc">
+                                <rect key="frame" x="20" y="758" width="374" height="30"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
                                     <action selector="onDelete:" destination="sdb-7w-hR9" eventType="touchUpInside" id="fCs-yL-C5k"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfR-8h-VO5">
+                                <rect key="frame" x="20" y="395.5" width="374" height="342.5"/>
+                                <connections>
+                                    <segue destination="BMd-NG-GNd" kind="embed" identifier="card" id="bKg-r3-18N"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe1-g6-aPm">
+                                <rect key="frame" x="20" y="273.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHK-T2-chY">
+                                <rect key="frame" x="20" y="354.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI1-db-ev5">
+                                <rect key="frame" x="20" y="304.5" width="374" height="30"/>
+                                <state key="normal" title="Quiz"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="Qe1-g6-aPm" secondAttribute="trailing" constant="20" id="1MO-Mc-mUA"/>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="NfR-8h-VO5" secondAttribute="trailing" constant="20" id="2Bk-Jh-a2W"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="Qjv-Hs-ReH" secondAttribute="trailing" constant="20" id="5Hp-o7-X8p"/>
+                            <constraint firstItem="oHK-T2-chY" firstAttribute="top" secondItem="mI1-db-ev5" secondAttribute="bottom" constant="20" id="DKv-iR-7kR"/>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="mI1-db-ev5" secondAttribute="trailing" constant="20" id="JVO-vx-1I2"/>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="oHK-T2-chY" secondAttribute="trailing" constant="20" id="LeJ-7I-uC1"/>
+                            <constraint firstItem="NfR-8h-VO5" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="O0n-j3-6ps"/>
+                            <constraint firstItem="esN-UF-IYc" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="QLE-uF-Mxj"/>
+                            <constraint firstItem="Qe1-g6-aPm" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="RCk-6v-opY"/>
                             <constraint firstItem="vmP-Y2-4OZ" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="X2a-yg-9EJ"/>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="esN-UF-IYc" secondAttribute="trailing" constant="20" id="ZKd-eL-DPL"/>
+                            <constraint firstItem="mI1-db-ev5" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="aLJ-5c-0FE"/>
+                            <constraint firstItem="Qe1-g6-aPm" firstAttribute="top" secondItem="Qjv-Hs-ReH" secondAttribute="bottom" constant="10" id="f7O-lU-VR9"/>
                             <constraint firstItem="vmP-Y2-4OZ" firstAttribute="top" secondItem="6LF-v4-Uau" secondAttribute="top" constant="20" id="fj3-RQ-bvA"/>
+                            <constraint firstItem="oHK-T2-chY" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="gs2-BI-Xk2"/>
+                            <constraint firstItem="mI1-db-ev5" firstAttribute="top" secondItem="Qe1-g6-aPm" secondAttribute="bottom" constant="10" id="nZZ-FU-ewj"/>
+                            <constraint firstItem="NfR-8h-VO5" firstAttribute="top" secondItem="oHK-T2-chY" secondAttribute="bottom" constant="20" id="sgM-rS-FMs"/>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="bottom" secondItem="esN-UF-IYc" secondAttribute="bottom" constant="20" id="vz7-f9-dMP"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="vmP-Y2-4OZ" secondAttribute="trailing" constant="20" id="wp1-Hz-DMu"/>
+                            <constraint firstItem="esN-UF-IYc" firstAttribute="top" secondItem="NfR-8h-VO5" secondAttribute="bottom" constant="20" id="xzf-2X-7lG"/>
                             <constraint firstItem="Qjv-Hs-ReH" firstAttribute="top" secondItem="vmP-Y2-4OZ" secondAttribute="bottom" constant="10" id="z8u-TW-IrV"/>
                             <constraint firstItem="Qjv-Hs-ReH" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="zaO-Rs-Ilu"/>
                         </constraints>
@@ -250,11 +287,28 @@
                     <connections>
                         <outlet property="labelDescription" destination="Qjv-Hs-ReH" id="qTe-ha-2Mv"/>
                         <outlet property="labelName" destination="vmP-Y2-4OZ" id="Umk-gQ-fxj"/>
+                        <segue destination="xlh-kZ-xad" kind="show" id="4a2-c8-cU2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKZ-3z-zU1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613" y="875"/>
+            <point key="canvasLocation" x="1611.5942028985507" y="874.55357142857144"/>
+        </scene>
+        <!--QuizView-->
+        <scene sceneID="dc0-Pb-d1F">
+            <objects>
+                <viewController title="QuizView" id="xlh-kZ-xad" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bIR-4t-6VT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5Le-1V-u74"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4nS-FI-fw4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pOC-p2-uHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1613" y="1590"/>
         </scene>
         <!--EditDeckView-->
         <scene sceneID="x8n-yB-qZu">
@@ -291,6 +345,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFY-lo-rJX">
+                                <rect key="frame" x="20" y="444" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-yp-wsd">
+                                <rect key="frame" x="20" y="485" width="374" height="357"/>
+                                <connections>
+                                    <segue destination="BMd-NG-GNd" kind="embed" identifier="card" id="phG-oe-LZ6"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -298,12 +364,19 @@
                             <constraint firstItem="Cja-3c-1RU" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="9Ac-SN-1O1"/>
                             <constraint firstItem="eJz-Fc-6Ng" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="9wd-g7-Vu1"/>
                             <constraint firstItem="eJz-Fc-6Ng" firstAttribute="top" secondItem="IpN-x6-Kk3" secondAttribute="bottom" constant="10" id="DzW-az-7ZV"/>
+                            <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="gwO-yp-wsd" secondAttribute="trailing" constant="20" id="EYj-Jq-EC2"/>
+                            <constraint firstItem="gwO-yp-wsd" firstAttribute="top" secondItem="lFY-lo-rJX" secondAttribute="bottom" constant="20" id="GIL-pd-yWL"/>
                             <constraint firstItem="7NN-YW-29p" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="GpK-SG-aVG"/>
                             <constraint firstItem="IpN-x6-Kk3" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="J9A-ZK-zns"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="7NN-YW-29p" secondAttribute="trailing" constant="20" id="Kge-YW-49S"/>
                             <constraint firstItem="IpN-x6-Kk3" firstAttribute="top" secondItem="Lcs-h1-Rhs" secondAttribute="top" constant="20" id="RAk-4e-ocL"/>
+                            <constraint firstItem="lFY-lo-rJX" firstAttribute="top" secondItem="7NN-YW-29p" secondAttribute="bottom" constant="20" id="Uwj-Nt-vPp"/>
+                            <constraint firstItem="lFY-lo-rJX" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="W1H-Tm-FMU"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="IpN-x6-Kk3" secondAttribute="trailing" constant="20" id="W7q-zO-pha"/>
+                            <constraint firstItem="gwO-yp-wsd" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="WHb-wj-XWt"/>
+                            <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="lFY-lo-rJX" secondAttribute="trailing" constant="20" id="Y8X-GU-Gps"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="eJz-Fc-6Ng" secondAttribute="trailing" constant="20" id="ZZ6-xq-eOz"/>
+                            <constraint firstItem="Lcs-h1-Rhs" firstAttribute="bottom" secondItem="gwO-yp-wsd" secondAttribute="bottom" constant="20" id="j7j-XU-YJr"/>
                             <constraint firstItem="Cja-3c-1RU" firstAttribute="top" secondItem="eJz-Fc-6Ng" secondAttribute="bottom" constant="20" id="jKW-fv-Aaj"/>
                             <constraint firstItem="7NN-YW-29p" firstAttribute="top" secondItem="Cja-3c-1RU" secondAttribute="bottom" constant="10" id="wrx-AG-Ehh"/>
                         </constraints>
@@ -422,8 +495,50 @@
             </objects>
             <point key="canvasLocation" x="-1481.1594202898552" y="138.61607142857142"/>
         </scene>
+        <!--Card View Controller-->
+        <scene sceneID="jQ5-SX-CwV">
+            <objects>
+                <viewController id="BMd-NG-GNd" customClass="CardViewController" customModule="ChineseFlashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gL1-o7-uX2">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="342.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HsP-0h-uCu">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="268.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type character or pinyin and press enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vfg-lJ-v1g">
+                                <rect key="frame" x="16" y="288.5" width="342" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="onAdd:" destination="BMd-NG-GNd" eventType="primaryActionTriggered" id="WEj-C7-dV7"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HsP-0h-uCu" firstAttribute="leading" secondItem="gL1-o7-uX2" secondAttribute="leading" id="NLP-7H-kvJ"/>
+                            <constraint firstItem="Vfg-lJ-v1g" firstAttribute="top" secondItem="HsP-0h-uCu" secondAttribute="bottom" constant="20" id="Pxm-Xc-eZW"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Vfg-lJ-v1g" secondAttribute="bottom" constant="20" id="hJD-QL-nia"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vfg-lJ-v1g" secondAttribute="trailing" id="kug-EE-3y6"/>
+                            <constraint firstItem="Vfg-lJ-v1g" firstAttribute="leading" secondItem="gL1-o7-uX2" secondAttribute="leadingMargin" id="m3O-F0-W7E"/>
+                            <constraint firstItem="HsP-0h-uCu" firstAttribute="top" secondItem="gL1-o7-uX2" secondAttribute="top" id="vGH-pv-sht"/>
+                            <constraint firstAttribute="trailing" secondItem="HsP-0h-uCu" secondAttribute="trailing" id="y35-fn-f6w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="HsP-0h-uCu" id="lmG-EU-vm9"/>
+                        <outlet property="fieldNew" destination="Vfg-lJ-v1g" id="9jK-9h-CE7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M8P-hH-pr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2680" y="875"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="bKg-r3-18N"/>
         <segue reference="KDF-85-FZV"/>
     </inferredMetricsTieBreakers>
 </document>
