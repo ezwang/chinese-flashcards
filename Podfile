@@ -8,6 +8,7 @@ target 'ChineseFlashcards' do
   # Pods for ChineseFlashcards
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 
   target 'ChineseFlashcardsTests' do
     inherit! :search_paths

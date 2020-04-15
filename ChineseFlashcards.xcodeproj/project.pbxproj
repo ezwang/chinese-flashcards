@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07083694244515DF001F44BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07083693244515DF001F44BD /* GoogleService-Info.plist */; };
 		076EFB462443A01500AE5225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB452443A01500AE5225 /* AppDelegate.swift */; };
 		076EFB482443A01500AE5225 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB472443A01500AE5225 /* SceneDelegate.swift */; };
 		076EFB4A2443A01500AE5225 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB492443A01500AE5225 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		076EFB522443A01600AE5225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076EFB502443A01600AE5225 /* LaunchScreen.storyboard */; };
 		076EFB5D2443A01600AE5225 /* ChineseFlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB5C2443A01600AE5225 /* ChineseFlashcardsTests.swift */; };
 		076EFB682443A01600AE5225 /* ChineseFlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EFB672443A01600AE5225 /* ChineseFlashcardsUITests.swift */; };
+		079A5BE92447A9C300244898 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 079A5BE82447A98F00244898 /* IndieFlower-Regular.ttf */; };
 		55CA88978099115AE509CB86 /* Pods_ChineseFlashcards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5F96E8E13882B2D36F3524 /* Pods_ChineseFlashcards.framework */; };
 		8EC44CE0CF328A0D4C8EE16B /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59F738D075A537158767D22 /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework */; };
 		CF39408A1B8C435A957538B6 /* Pods_ChineseFlashcardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FA46EA8261A579C3574578 /* Pods_ChineseFlashcardsTests.framework */; };
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07083693244515DF001F44BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		076EFB422443A01500AE5225 /* ChineseFlashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChineseFlashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076EFB452443A01500AE5225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076EFB472443A01500AE5225 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		076EFB632443A01600AE5225 /* ChineseFlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseFlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		076EFB672443A01600AE5225 /* ChineseFlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseFlashcardsUITests.swift; sourceTree = "<group>"; };
 		076EFB692443A01600AE5225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		079A5BE82447A98F00244898 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		0E21352BF70FE6CE24D46D1A /* Pods-ChineseFlashcards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcards.release.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcards/Pods-ChineseFlashcards.release.xcconfig"; sourceTree = "<group>"; };
 		0F5F96E8E13882B2D36F3524 /* Pods_ChineseFlashcards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseFlashcards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FA46EA8261A579C3574578 /* Pods_ChineseFlashcardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseFlashcardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,8 @@
 		076EFB442443A01500AE5225 /* ChineseFlashcards */ = {
 			isa = PBXGroup;
 			children = (
+				079A5BE72447A98000244898 /* fonts */,
+				07083693244515DF001F44BD /* GoogleService-Info.plist */,
 				076EFB452443A01500AE5225 /* AppDelegate.swift */,
 				076EFB472443A01500AE5225 /* SceneDelegate.swift */,
 				076EFB492443A01500AE5225 /* ViewController.swift */,
@@ -145,6 +151,14 @@
 			path = ChineseFlashcardsUITests;
 			sourceTree = "<group>";
 		};
+		079A5BE72447A98000244898 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				079A5BE82447A98F00244898 /* IndieFlower-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		398C95C194475D2EE34B8617 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +169,6 @@
 				4A2AA1B16D350BD9927A9690 /* Pods-ChineseFlashcardsTests.debug.xcconfig */,
 				8D1C229904906784662676F3 /* Pods-ChineseFlashcardsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,8 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				076EFB522443A01600AE5225 /* LaunchScreen.storyboard in Resources */,
+				07083694244515DF001F44BD /* GoogleService-Info.plist in Resources */,
 				076EFB4F2443A01600AE5225 /* Assets.xcassets in Resources */,
 				076EFB4D2443A01500AE5225 /* Main.storyboard in Resources */,
+				079A5BE92447A9C300244898 /* IndieFlower-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
