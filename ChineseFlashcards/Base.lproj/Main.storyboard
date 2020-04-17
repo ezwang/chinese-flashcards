@@ -251,7 +251,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfR-8h-VO5">
-                                <rect key="frame" x="10" y="420.5" width="394" height="317.5"/>
+                                <rect key="frame" x="20" y="420.5" width="374" height="317.5"/>
                                 <connections>
                                     <segue destination="BMd-NG-GNd" kind="embed" identifier="card" id="bKg-r3-18N"/>
                                 </connections>
@@ -303,7 +303,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="Qe1-g6-aPm" secondAttribute="trailing" constant="20" id="1MO-Mc-mUA"/>
-                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="NfR-8h-VO5" secondAttribute="trailing" constant="10" id="2Bk-Jh-a2W"/>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="NfR-8h-VO5" secondAttribute="trailing" constant="20" id="2Bk-Jh-a2W"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="Qjv-Hs-ReH" secondAttribute="trailing" constant="20" id="5Hp-o7-X8p"/>
                             <constraint firstItem="LZR-Sq-Ytd" firstAttribute="top" secondItem="Qe1-g6-aPm" secondAttribute="bottom" constant="10" id="77N-gJ-MM8"/>
                             <constraint firstItem="LZR-Sq-Ytd" firstAttribute="centerX" secondItem="ss6-kt-C8M" secondAttribute="centerX" id="Cqx-Tc-zpb"/>
@@ -311,7 +311,7 @@
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="mI1-db-ev5" secondAttribute="trailing" constant="20" id="JVO-vx-1I2"/>
                             <constraint firstItem="5ox-4G-MZW" firstAttribute="top" secondItem="yvj-Zx-mGe" secondAttribute="bottom" constant="10" id="KzE-qA-9xe"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="oHK-T2-chY" secondAttribute="trailing" constant="20" id="LeJ-7I-uC1"/>
-                            <constraint firstItem="NfR-8h-VO5" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="10" id="O0n-j3-6ps"/>
+                            <constraint firstItem="NfR-8h-VO5" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="O0n-j3-6ps"/>
                             <constraint firstItem="esN-UF-IYc" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="QLE-uF-Mxj"/>
                             <constraint firstItem="Qe1-g6-aPm" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="RCk-6v-opY"/>
                             <constraint firstItem="yvj-Zx-mGe" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="UL7-Uo-yZg"/>
@@ -532,7 +532,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-yp-wsd">
-                                <rect key="frame" x="10" y="385" width="394" height="457"/>
+                                <rect key="frame" x="20" y="385" width="374" height="457"/>
                                 <connections>
                                     <segue destination="BMd-NG-GNd" kind="embed" identifier="card" id="phG-oe-LZ6"/>
                                 </connections>
@@ -544,7 +544,7 @@
                             <constraint firstItem="Cja-3c-1RU" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="9Ac-SN-1O1"/>
                             <constraint firstItem="eJz-Fc-6Ng" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="9wd-g7-Vu1"/>
                             <constraint firstItem="eJz-Fc-6Ng" firstAttribute="top" secondItem="IpN-x6-Kk3" secondAttribute="bottom" constant="10" id="DzW-az-7ZV"/>
-                            <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="gwO-yp-wsd" secondAttribute="trailing" constant="10" id="EYj-Jq-EC2"/>
+                            <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="gwO-yp-wsd" secondAttribute="trailing" constant="20" id="EYj-Jq-EC2"/>
                             <constraint firstItem="gwO-yp-wsd" firstAttribute="top" secondItem="lFY-lo-rJX" secondAttribute="bottom" constant="20" id="GIL-pd-yWL"/>
                             <constraint firstItem="7NN-YW-29p" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="GpK-SG-aVG"/>
                             <constraint firstItem="IpN-x6-Kk3" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="J9A-ZK-zns"/>
@@ -553,7 +553,7 @@
                             <constraint firstItem="lFY-lo-rJX" firstAttribute="top" secondItem="7NN-YW-29p" secondAttribute="bottom" constant="20" id="Uwj-Nt-vPp"/>
                             <constraint firstItem="lFY-lo-rJX" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="W1H-Tm-FMU"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="IpN-x6-Kk3" secondAttribute="trailing" constant="20" id="W7q-zO-pha"/>
-                            <constraint firstItem="gwO-yp-wsd" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="10" id="WHb-wj-XWt"/>
+                            <constraint firstItem="gwO-yp-wsd" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="WHb-wj-XWt"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="lFY-lo-rJX" secondAttribute="trailing" constant="20" id="Y8X-GU-Gps"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="eJz-Fc-6Ng" secondAttribute="trailing" constant="20" id="ZZ6-xq-eOz"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="bottom" secondItem="gwO-yp-wsd" secondAttribute="bottom" constant="20" id="j7j-XU-YJr"/>
@@ -680,18 +680,18 @@
             <objects>
                 <viewController id="BMd-NG-GNd" customClass="CardViewController" customModule="ChineseFlashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gL1-o7-uX2">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="317.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HsP-0h-uCu">
-                                <rect key="frame" x="0.0" y="0.0" width="394" height="273.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="413"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="card" rowHeight="75" id="IQm-hW-8sv" customClass="CardCell" customModule="ChineseFlashcards" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="75"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IQm-hW-8sv" id="mAH-ce-6fL">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我喜欢吃东西" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcQ-PM-TdH">
@@ -704,13 +704,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I like to eat food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHe-kj-9bd">
-                                                    <rect key="frame" x="240" y="37" width="149" height="21"/>
+                                                    <rect key="frame" x="240" y="37" width="129" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wǒ xǐhuān chī dōngxī" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBR-El-DR8">
-                                                    <rect key="frame" x="240" y="16" width="149" height="21"/>
+                                                    <rect key="frame" x="240" y="16" width="129" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -738,7 +738,7 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type character or pinyin and press enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vfg-lJ-v1g">
-                                <rect key="frame" x="20" y="283.5" width="354" height="34"/>
+                                <rect key="frame" x="16" y="423" width="342" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -807,6 +807,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4MF-Vo-Hfa"/>
-        <segue reference="bKg-r3-18N"/>
+        <segue reference="phG-oe-LZ6"/>
     </inferredMetricsTieBreakers>
 </document>

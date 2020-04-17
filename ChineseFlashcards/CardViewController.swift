@@ -55,6 +55,13 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cards.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
@@ -62,5 +69,9 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         cardView.delegate = self
         cardView.dataSource = self
+        
+        cardView.layer.borderWidth = 1
+        cardView.layer.borderColor = UIColor.lightGray.cgColor
+        cardView.layer.cornerRadius = 5
     }
 }
