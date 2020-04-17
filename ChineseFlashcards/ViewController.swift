@@ -26,9 +26,22 @@ func getErrorMessage(code: Int) -> String {
     }
 }
 
-class RootSegue : UIStoryboardSegue {
+class TransitionSegue : UIStoryboardSegue {
     override func perform() {
-        self.source.navigationController?.setViewControllers([self.destination], animated: true)
+        var viewControllers = self.source.navigationController?.viewControllers ?? []
+        _ = viewControllers.popLast()
+        viewControllers.append(self.destination)
+        self.source.navigationController?.setViewControllers(viewControllers, animated: true)
+    }
+}
+
+extension UIView {
+    @IBInspectable var borderRadius: CGFloat {
+        get { return layer.cornerRadius }
+        set {
+            layer.masksToBounds = true
+            layer.cornerRadius = newValue
+        }
     }
 }
 
@@ -141,6 +154,76 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
     }
 }
 
+class QuizViewController: UIViewController {
+    var deck : Deck?
+    var cardQueue : [Card] = []
+    var maxCount : Int = 1
+    var answerShown : Bool = false
+    
+    @IBOutlet weak var labelProgress: UILabel!
+    @IBOutlet weak var barProgress: UIProgressView!
+    @IBOutlet weak var labelAnswer: UIButton!
+    @IBOutlet weak var labelQuestion: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let realDeck = deck {
+            cardQueue = realDeck.cards
+            cardQueue.shuffle()
+            maxCount = cardQueue.count
+        }
+        
+        updateProgress()
+    }
+    
+    func updateProgress() {
+        labelProgress.text = "\(cardQueue.count)/\(maxCount) Cards Reviewed"
+        barProgress.setProgress(1 - Float(cardQueue.count) / Float(maxCount), animated: true)
+        
+        if let card = getCard() {
+            // TODO: allow customization for this
+            labelQuestion.text = card.character
+            labelAnswer.setTitle("Show Answer", for: .normal)
+            labelAnswer.backgroundColor = UIColor.systemIndigo
+            labelAnswer.setTitleColor(UIColor.systemBackground, for: .normal)
+            answerShown = false
+        }
+        else {
+            performSegue(withIdentifier: "done", sender: nil)
+        }
+    }
+    
+    func getCard() -> Card? {
+        return cardQueue.last
+    }
+    
+    @IBAction func onShow(_ sender: Any) {
+        if let card = getCard() {
+            // TODO: allow customization for this
+            labelAnswer.setTitle(card.meaning, for: .normal)
+            labelAnswer.backgroundColor = UIColor.systemBackground
+            labelAnswer.setTitleColor(UIColor.label, for: .normal)
+            answerShown = true
+        }
+    }
+    
+    @IBAction func onNo(_ sender: Any) {
+        // if the answer is shown, continue and mark as no
+        if (answerShown) {
+            _ = cardQueue.popLast()
+            updateProgress()
+        }
+        else {
+            // show the answer otherwise
+            onShow(sender)
+        }
+    }
+    
+    @IBAction func onYes(_ sender: Any) {
+        _ = cardQueue.popLast()
+        updateProgress()
+    }
+}
+
 class DeckDetailViewController: UIViewController {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDescription: UITextView!
@@ -160,11 +243,22 @@ class DeckDetailViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onQuiz(_ sender: Any) {
+        performSegue(withIdentifier: "quiz", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "card" {
             if let controller = segue.destination as? CardViewController {
                 if let realDeck = deck {
                     controller.cards = realDeck.cards
+                }
+            }
+        }
+        else if segue.identifier == "quiz" {
+            if let controller = segue.destination as? QuizViewController {
+                if let realDeck = deck {
+                    controller.deck = realDeck
                 }
             }
         }
