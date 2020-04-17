@@ -45,7 +45,7 @@ func getDatabase() throws -> Connection {
 func searchCharacter(search: String) -> [Card] {
     if let db = try? getDatabase() {
         let modSearch = "%\(search)%"
-        if let result = try? db.prepare("SELECT character, meaning, pinyin FROM dictionary WHERE character LIKE ? OR meaning LIKE ? OR pinyin LIKE ? LIMIT 25").run([modSearch, modSearch, modSearch]) {
+        if let result = try? db.prepare("SELECT character, meaning, pinyin FROM dictionary WHERE character LIKE ? OR meaning LIKE ? OR pinyin LIKE ? ORDER BY LENGTH(character) LIMIT 25").run([modSearch, modSearch, modSearch]) {
             let results = result.enumerated().map {row in
                 return Card(character: row.element[0] as? String ?? "", meaning: row.element[1] as? String ?? "", pinyin: row.element[2] as? String ?? "")
             }
@@ -63,7 +63,12 @@ func getAccent(char: String, tone: Int) -> String? {
         "o": ["ō", "ó", "ǒ", "ò", "o"],
         "u": ["ū", "ú", "ǔ", "ù", "u"]
     ]
-    return lookup[char]?[tone]
+    if let arr = lookup[char] {
+        if tone > 0 && tone < arr.count {
+            return arr[tone]
+        }
+    }
+    return nil
 }
 
 func formatPinyin(_ input: String) -> String {

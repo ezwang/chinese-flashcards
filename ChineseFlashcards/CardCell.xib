@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="dfn-qb-FyO" customClass="CardCell" customModule="ChineseFlashcards" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我喜欢吃东西" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5h-ry-iyb">
+                    <rect key="frame" x="15" y="5" width="210" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="210" id="sFm-gs-NwW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I like to eat food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-1I-ycS">
+                    <rect key="frame" x="230" y="36" width="121.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wǒ xǐhuān chī dōngxī" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lt1-5t-tjY">
+                    <rect key="frame" x="230" y="15" width="160" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Lt1-5t-tjY" firstAttribute="top" secondItem="dfn-qb-FyO" secondAttribute="top" constant="15" id="22N-wn-O7G"/>
+                <constraint firstItem="X5h-ry-iyb" firstAttribute="leading" secondItem="tWU-9i-mpf" secondAttribute="leading" constant="15" id="OWZ-AF-RWP"/>
+                <constraint firstItem="X5h-ry-iyb" firstAttribute="top" secondItem="dfn-qb-FyO" secondAttribute="top" constant="5" id="bz2-iC-kK1"/>
+                <constraint firstItem="Lt1-5t-tjY" firstAttribute="leading" secondItem="X5h-ry-iyb" secondAttribute="trailing" constant="5" id="cjD-fw-L0R"/>
+                <constraint firstItem="Oxe-1I-ycS" firstAttribute="leading" secondItem="X5h-ry-iyb" secondAttribute="trailing" constant="5" id="ggR-bs-lVC"/>
+                <constraint firstItem="Oxe-1I-ycS" firstAttribute="top" secondItem="Lt1-5t-tjY" secondAttribute="bottom" id="hEu-sz-tA5"/>
+                <constraint firstItem="tWU-9i-mpf" firstAttribute="bottom" secondItem="X5h-ry-iyb" secondAttribute="bottom" constant="5" id="rVJ-zT-sN4"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="tWU-9i-mpf"/>
+            <connections>
+                <outlet property="constraintCharacter" destination="sFm-gs-NwW" id="p0v-Qw-d4l"/>
+                <outlet property="labelCharacter" destination="X5h-ry-iyb" id="KG7-TZ-DGe"/>
+                <outlet property="labelMeaning" destination="Oxe-1I-ycS" id="Yd8-W6-Civ"/>
+                <outlet property="labelPinyin" destination="Lt1-5t-tjY" id="jVS-aF-uUT"/>
+            </connections>
+            <point key="canvasLocation" x="204" y="100"/>
+        </view>
+    </objects>
+</document>

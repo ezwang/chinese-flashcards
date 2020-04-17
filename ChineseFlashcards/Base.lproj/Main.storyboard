@@ -245,7 +245,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-UF-IYc">
                                 <rect key="frame" x="20" y="758" width="374" height="30"/>
-                                <state key="normal" title="Delete"/>
+                                <state key="normal" title="Delete Deck"/>
                                 <connections>
                                     <action selector="onDelete:" destination="sdb-7w-hR9" eventType="touchUpInside" id="fCs-yL-C5k"/>
                                 </connections>
@@ -441,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOC-p2-uHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521.739130434783" y="1589.7321428571429"/>
+            <point key="canvasLocation" x="2680" y="1590"/>
         </scene>
         <!--QuizFinishView-->
         <scene sceneID="WWM-pc-ZUb">
@@ -457,7 +457,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've finished this card deck!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xl-tf-q1S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've finished reviewing this card deck!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xl-tf-q1S">
                                 <rect key="frame" x="20" y="267" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -488,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNW-fd-Zeq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3328.985507246377" y="1589.7321428571429"/>
+            <point key="canvasLocation" x="3590" y="1590"/>
         </scene>
         <!--EditDeckView-->
         <scene sceneID="x8n-yB-qZu">
@@ -532,7 +532,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-yp-wsd">
-                                <rect key="frame" x="20" y="385" width="374" height="457"/>
+                                <rect key="frame" x="20" y="375" width="374" height="467"/>
                                 <connections>
                                     <segue destination="BMd-NG-GNd" kind="embed" identifier="card" id="phG-oe-LZ6"/>
                                 </connections>
@@ -545,7 +545,7 @@
                             <constraint firstItem="eJz-Fc-6Ng" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="9wd-g7-Vu1"/>
                             <constraint firstItem="eJz-Fc-6Ng" firstAttribute="top" secondItem="IpN-x6-Kk3" secondAttribute="bottom" constant="10" id="DzW-az-7ZV"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="gwO-yp-wsd" secondAttribute="trailing" constant="20" id="EYj-Jq-EC2"/>
-                            <constraint firstItem="gwO-yp-wsd" firstAttribute="top" secondItem="lFY-lo-rJX" secondAttribute="bottom" constant="20" id="GIL-pd-yWL"/>
+                            <constraint firstItem="gwO-yp-wsd" firstAttribute="top" secondItem="lFY-lo-rJX" secondAttribute="bottom" constant="10" id="GIL-pd-yWL"/>
                             <constraint firstItem="7NN-YW-29p" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="GpK-SG-aVG"/>
                             <constraint firstItem="IpN-x6-Kk3" firstAttribute="leading" secondItem="Lcs-h1-Rhs" secondAttribute="leading" constant="20" id="J9A-ZK-zns"/>
                             <constraint firstItem="Lcs-h1-Rhs" firstAttribute="trailing" secondItem="7NN-YW-29p" secondAttribute="trailing" constant="20" id="Kge-YW-49S"/>
@@ -680,79 +680,27 @@
             <objects>
                 <viewController id="BMd-NG-GNd" customClass="CardViewController" customModule="ChineseFlashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gL1-o7-uX2">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="457"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="317.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HsP-0h-uCu">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="413"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="282.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="card" rowHeight="75" id="IQm-hW-8sv" customClass="CardCell" customModule="ChineseFlashcards" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IQm-hW-8sv" id="mAH-ce-6fL">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我喜欢吃东西" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcQ-PM-TdH">
-                                                    <rect key="frame" x="25" y="16" width="210" height="43"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="210" id="PWa-Sn-6dq"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I like to eat food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHe-kj-9bd">
-                                                    <rect key="frame" x="240" y="37" width="129" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wǒ xǐhuān chī dōngxī" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBR-El-DR8">
-                                                    <rect key="frame" x="240" y="16" width="129" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="KBR-El-DR8" secondAttribute="trailing" constant="5" id="2fR-2L-g7T"/>
-                                                <constraint firstItem="KBR-El-DR8" firstAttribute="leading" secondItem="HcQ-PM-TdH" secondAttribute="trailing" constant="5" id="I9r-gO-Yht"/>
-                                                <constraint firstItem="xHe-kj-9bd" firstAttribute="leading" secondItem="HcQ-PM-TdH" secondAttribute="trailing" constant="5" id="aVf-Vs-4LY"/>
-                                                <constraint firstItem="HcQ-PM-TdH" firstAttribute="leading" secondItem="mAH-ce-6fL" secondAttribute="leadingMargin" constant="5" id="d91-6a-QU9"/>
-                                                <constraint firstItem="KBR-El-DR8" firstAttribute="top" secondItem="mAH-ce-6fL" secondAttribute="top" constant="16" id="m8m-WK-2zh"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HcQ-PM-TdH" secondAttribute="bottom" constant="5" id="qXK-dg-rPY"/>
-                                                <constraint firstItem="xHe-kj-9bd" firstAttribute="top" secondItem="KBR-El-DR8" secondAttribute="bottom" id="u5T-zJ-frt"/>
-                                                <constraint firstAttribute="trailing" secondItem="xHe-kj-9bd" secondAttribute="trailing" constant="5" id="v2k-4H-CxO"/>
-                                                <constraint firstItem="HcQ-PM-TdH" firstAttribute="top" secondItem="mAH-ce-6fL" secondAttribute="topMargin" constant="5" id="x1d-5F-Yl4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="constraintCharacter" destination="PWa-Sn-6dq" id="7Yz-zd-N0l"/>
-                                            <outlet property="labelCharacter" destination="HcQ-PM-TdH" id="Bqk-Nk-Lbi"/>
-                                            <outlet property="labelMeaning" destination="xHe-kj-9bd" id="Ah1-el-cK8"/>
-                                            <outlet property="labelPinyin" destination="KBR-El-DR8" id="xmk-TC-5cb"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type character or pinyin and press enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vfg-lJ-v1g">
-                                <rect key="frame" x="16" y="423" width="342" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnu-aS-EAO">
+                                <rect key="frame" x="154.5" y="287.5" width="65" height="30"/>
+                                <state key="normal" title="Add Card"/>
                                 <connections>
-                                    <action selector="onAdd:" destination="BMd-NG-GNd" eventType="primaryActionTriggered" id="WEj-C7-dV7"/>
+                                    <action selector="onAdd:" destination="BMd-NG-GNd" eventType="touchUpInside" id="1H0-kv-9Bt"/>
                                 </connections>
-                            </textField>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="HsP-0h-uCu" firstAttribute="leading" secondItem="gL1-o7-uX2" secondAttribute="leading" id="NLP-7H-kvJ"/>
-                            <constraint firstItem="Vfg-lJ-v1g" firstAttribute="top" secondItem="HsP-0h-uCu" secondAttribute="bottom" constant="10" id="Pxm-Xc-eZW"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Vfg-lJ-v1g" secondAttribute="bottom" id="hJD-QL-nia"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vfg-lJ-v1g" secondAttribute="trailing" id="kug-EE-3y6"/>
-                            <constraint firstItem="Vfg-lJ-v1g" firstAttribute="leading" secondItem="gL1-o7-uX2" secondAttribute="leadingMargin" id="m3O-F0-W7E"/>
+                            <constraint firstItem="gfr-PM-UeZ" firstAttribute="bottom" secondItem="Jnu-aS-EAO" secondAttribute="bottom" id="bYK-Co-YpV"/>
+                            <constraint firstItem="Jnu-aS-EAO" firstAttribute="top" secondItem="HsP-0h-uCu" secondAttribute="bottom" constant="5" id="ihz-Gx-eSu"/>
+                            <constraint firstItem="Jnu-aS-EAO" firstAttribute="centerX" secondItem="gL1-o7-uX2" secondAttribute="centerX" id="u3m-ge-U3T"/>
                             <constraint firstItem="HsP-0h-uCu" firstAttribute="top" secondItem="gL1-o7-uX2" secondAttribute="top" id="vGH-pv-sht"/>
                             <constraint firstAttribute="trailing" secondItem="HsP-0h-uCu" secondAttribute="trailing" id="y35-fn-f6w"/>
                         </constraints>
@@ -760,12 +708,61 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="HsP-0h-uCu" id="lmG-EU-vm9"/>
-                        <outlet property="fieldNew" destination="Vfg-lJ-v1g" id="9jK-9h-CE7"/>
+                        <segue destination="oIh-Eg-K25" kind="showDetail" identifier="character" id="av9-p1-e0E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8P-hH-pr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2679.7101449275365" y="874.55357142857144"/>
+        </scene>
+        <!--CharacterViewController-->
+        <scene sceneID="wMK-Af-kq6">
+            <objects>
+                <viewController title="CharacterViewController" id="oIh-Eg-K25" customClass="CharacterViewController" customModule="ChineseFlashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FaL-Nn-M7o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFt-RK-0Vo">
+                                <rect key="frame" x="20" y="20" width="374" height="56"/>
+                                <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-nW-oYB">
+                                <rect key="frame" x="0.0" y="137" width="414" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vrO-Km-NXi">
+                                <rect key="frame" x="0.0" y="81" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vrO-Km-NXi" firstAttribute="top" secondItem="GFt-RK-0Vo" secondAttribute="bottom" constant="5" id="0Rb-r9-ejp"/>
+                            <constraint firstItem="vrO-Km-NXi" firstAttribute="trailing" secondItem="tyf-KN-ImQ" secondAttribute="trailing" id="2Ew-wZ-eiP"/>
+                            <constraint firstItem="tyf-KN-ImQ" firstAttribute="trailing" secondItem="GFt-RK-0Vo" secondAttribute="trailing" constant="20" id="65v-Q0-Nvg"/>
+                            <constraint firstItem="5R1-nW-oYB" firstAttribute="leading" secondItem="tyf-KN-ImQ" secondAttribute="leading" id="G8R-wQ-3tw"/>
+                            <constraint firstItem="tyf-KN-ImQ" firstAttribute="bottom" secondItem="5R1-nW-oYB" secondAttribute="bottom" id="Le4-7U-h1o"/>
+                            <constraint firstItem="5R1-nW-oYB" firstAttribute="top" secondItem="vrO-Km-NXi" secondAttribute="bottom" id="Nsd-Tg-CBY"/>
+                            <constraint firstItem="GFt-RK-0Vo" firstAttribute="top" secondItem="tyf-KN-ImQ" secondAttribute="top" constant="20" id="Qu3-wd-TmB"/>
+                            <constraint firstItem="vrO-Km-NXi" firstAttribute="leading" secondItem="tyf-KN-ImQ" secondAttribute="leading" id="Tcs-g6-dBU"/>
+                            <constraint firstItem="GFt-RK-0Vo" firstAttribute="leading" secondItem="tyf-KN-ImQ" secondAttribute="leading" constant="20" id="aXo-hD-BJx"/>
+                            <constraint firstItem="tyf-KN-ImQ" firstAttribute="trailing" secondItem="5R1-nW-oYB" secondAttribute="trailing" id="xEC-fx-xnC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tyf-KN-ImQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Ha-Gu-J0Q"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="characterView" destination="5R1-nW-oYB" id="iQT-1R-n2z"/>
+                        <outlet property="searchBar" destination="vrO-Km-NXi" id="l7v-Z2-oUS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldm-3O-quu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3590" y="874"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XMJ-Jq-emM">
@@ -807,6 +804,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4MF-Vo-Hfa"/>
-        <segue reference="phG-oe-LZ6"/>
+        <segue reference="bKg-r3-18N"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -45,7 +45,7 @@ class QuizViewController: UIViewController {
             case .meaning:
                 labelQuestion.text = card.meaning
             case .pinyin:
-                labelQuestion.text = card.pinyin
+                labelQuestion.text = formatPinyin(card.pinyin)
             }
             labelAnswer.setTitle("Show Answer", for: .normal)
             labelAnswer.backgroundColor = UIColor.systemIndigo
@@ -69,7 +69,7 @@ class QuizViewController: UIViewController {
             case .meaning:
                 labelAnswer.setTitle(card.meaning, for: .normal)
             case .pinyin:
-                labelAnswer.setTitle(card.pinyin, for: .normal)
+                labelAnswer.setTitle(formatPinyin(card.pinyin), for: .normal)
             }
             labelAnswer.backgroundColor = UIColor.systemBackground
             labelAnswer.setTitleColor(UIColor.label, for: .normal)
