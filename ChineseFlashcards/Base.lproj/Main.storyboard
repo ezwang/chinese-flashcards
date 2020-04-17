@@ -686,6 +686,56 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HsP-0h-uCu">
                                 <rect key="frame" x="0.0" y="0.0" width="394" height="273.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="card" rowHeight="75" id="IQm-hW-8sv" customClass="CardCell" customModule="ChineseFlashcards" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IQm-hW-8sv" id="mAH-ce-6fL">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我喜欢吃东西" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcQ-PM-TdH">
+                                                    <rect key="frame" x="25" y="16" width="210" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="210" id="PWa-Sn-6dq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I like to eat food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHe-kj-9bd">
+                                                    <rect key="frame" x="240" y="37" width="149" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wǒ xǐhuān chī dōngxī" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBR-El-DR8">
+                                                    <rect key="frame" x="240" y="16" width="149" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KBR-El-DR8" secondAttribute="trailing" constant="5" id="2fR-2L-g7T"/>
+                                                <constraint firstItem="KBR-El-DR8" firstAttribute="leading" secondItem="HcQ-PM-TdH" secondAttribute="trailing" constant="5" id="I9r-gO-Yht"/>
+                                                <constraint firstItem="xHe-kj-9bd" firstAttribute="leading" secondItem="HcQ-PM-TdH" secondAttribute="trailing" constant="5" id="aVf-Vs-4LY"/>
+                                                <constraint firstItem="HcQ-PM-TdH" firstAttribute="leading" secondItem="mAH-ce-6fL" secondAttribute="leadingMargin" constant="5" id="d91-6a-QU9"/>
+                                                <constraint firstItem="KBR-El-DR8" firstAttribute="top" secondItem="mAH-ce-6fL" secondAttribute="top" constant="16" id="m8m-WK-2zh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HcQ-PM-TdH" secondAttribute="bottom" constant="5" id="qXK-dg-rPY"/>
+                                                <constraint firstItem="xHe-kj-9bd" firstAttribute="top" secondItem="KBR-El-DR8" secondAttribute="bottom" id="u5T-zJ-frt"/>
+                                                <constraint firstAttribute="trailing" secondItem="xHe-kj-9bd" secondAttribute="trailing" constant="5" id="v2k-4H-CxO"/>
+                                                <constraint firstItem="HcQ-PM-TdH" firstAttribute="top" secondItem="mAH-ce-6fL" secondAttribute="topMargin" constant="5" id="x1d-5F-Yl4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="constraintCharacter" destination="PWa-Sn-6dq" id="7Yz-zd-N0l"/>
+                                            <outlet property="labelCharacter" destination="HcQ-PM-TdH" id="Bqk-Nk-Lbi"/>
+                                            <outlet property="labelMeaning" destination="xHe-kj-9bd" id="Ah1-el-cK8"/>
+                                            <outlet property="labelPinyin" destination="KBR-El-DR8" id="xmk-TC-5cb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type character or pinyin and press enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vfg-lJ-v1g">
                                 <rect key="frame" x="20" y="283.5" width="354" height="34"/>
@@ -715,7 +765,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8P-hH-pr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="875"/>
+            <point key="canvasLocation" x="2679.7101449275365" y="874.55357142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XMJ-Jq-emM">

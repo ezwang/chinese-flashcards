@@ -28,6 +28,9 @@ class QuizViewController: UIViewController {
             maxCount = cardQueue.count
         }
         
+        labelQuestion.adjustsFontSizeToFitWidth = true
+        labelAnswer.titleLabel?.adjustsFontSizeToFitWidth = true
+        
         updateProgress()
     }
     

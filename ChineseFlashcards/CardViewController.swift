@@ -8,6 +8,13 @@
 
 import UIKit
 
+class CardCell : UITableViewCell {
+    @IBOutlet weak var labelCharacter: UILabel!
+    @IBOutlet weak var labelPinyin: UILabel!
+    @IBOutlet weak var labelMeaning: UILabel!
+    @IBOutlet weak var constraintCharacter: NSLayoutConstraint!
+}
+
 class CardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var cardView: UITableView!
@@ -38,16 +45,22 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "card")!
         
-        // TODO: properly render character/meaning/pinyin
-        cell.textLabel?.text = cards[indexPath.row].character
-        cell.detailTextLabel?.text = cards[indexPath.row].meaning
+        if let cardCell = cell as? CardCell {
+            cardCell.labelCharacter.text = cards[indexPath.row].character
+            cardCell.labelPinyin.text = cards[indexPath.row].pinyin
+            cardCell.labelMeaning.text = cards[indexPath.row].meaning
+            cardCell.constraintCharacter.constant = CGFloat((cardCell.labelCharacter.text?.count ?? 0) * 35)
+        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
     }
     
     override func viewDidLoad() {
         cardView.delegate = self
         cardView.dataSource = self
-        cardView.register(UITableViewCell.self, forCellReuseIdentifier: "card")
     }
 }
