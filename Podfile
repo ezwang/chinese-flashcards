@@ -10,6 +10,8 @@ target 'ChineseFlashcards' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
 
+  pod 'SQLite.swift'
+
   target 'ChineseFlashcardsTests' do
     inherit! :search_paths
     # Pods for testing

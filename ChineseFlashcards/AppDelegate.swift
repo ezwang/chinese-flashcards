@@ -16,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // configure firebase
         FirebaseApp.configure()
+        
+        // import dictionary
+        DispatchQueue.global(qos: .utility).async {
+            extractDictionaryData()
+        }
+        
         return true
     }
 
