@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class CardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CharacterDelegate {
     
     @IBOutlet weak var cardView: UITableView!
     
     var cards : [Card] = []
+    var deckId : String?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
@@ -32,8 +34,15 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            cards.remove(at: indexPath.row)
+            let card = cards.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // if editing, delete card in firestore
+            if let did = deckId {
+                Firestore.firestore().collection("decks").document(did).updateData([
+                    "cards": FieldValue.arrayRemove([card.dict])
+                ])
+            }
         }
     }
     
@@ -52,7 +61,7 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
         cardView.layer.borderColor = UIColor.lightGray.cgColor
         cardView.layer.cornerRadius = 5
     }
-
+    
     @IBAction func onAdd(_ sender: Any) {
         performSegue(withIdentifier: "character", sender: nil)
     }
@@ -68,5 +77,10 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
     func addCharacter(card: Card) {
         cards.append(card)
         cardView.reloadData()
+        
+        // if editing, add card to firestore
+        if let did = deckId {
+            Firestore.firestore().collection("decks").document(did).updateData(["cards": FieldValue.arrayUnion([card.dict])])
+        }
     }
 }

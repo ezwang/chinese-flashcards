@@ -12,6 +12,16 @@ struct Card {
     var character : String
     var meaning : String
     var pinyin : String
+    
+    var dict : [String: String] {
+        get {
+            return [
+                "character": self.character,
+                "meaning": self.meaning,
+                "pinyin": self.pinyin
+            ]
+        }
+    }
 }
 
 struct Deck {

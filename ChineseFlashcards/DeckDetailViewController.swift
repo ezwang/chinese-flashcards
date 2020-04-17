@@ -28,11 +28,22 @@ class DeckDetailViewController: UIViewController {
     }
     
     @IBAction func onDelete(_ sender: Any) {
-        let db = Firestore.firestore()
-        if let realDeck = deck {
-            db.collection("decks").document(realDeck.id).delete()
-        }
-        self.dismiss(animated: true, completion: nil)
+        let dialog = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this deck?", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .destructive, handler: { (action) -> Void in
+            let db = Firestore.firestore()
+            if let realDeck = self.deck {
+                db.collection("decks").document(realDeck.id).delete()
+            }
+            self.dismiss(animated: true, completion: nil)
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        dialog.addAction(ok)
+        dialog.addAction(cancel)
+        
+        self.present(dialog, animated: true, completion: nil)
     }
     
     @IBAction func onQuiz(_ sender: Any) {
@@ -53,11 +64,12 @@ class DeckDetailViewController: UIViewController {
             segmentQuizTo.setTitle("Pinyin", forSegmentAt: 1)
         }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "card" {
             if let controller = segue.destination as? CardViewController {
                 if let realDeck = deck {
+                    controller.deckId = realDeck.id
                     controller.cards = realDeck.cards
                 }
             }
