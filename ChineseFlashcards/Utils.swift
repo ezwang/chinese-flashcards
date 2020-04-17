@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import SQLite
 
 func getErrorMessage(code: Int) -> String {
     let errCode = FirebaseAuth.AuthErrorCode(rawValue: code)
@@ -36,14 +37,64 @@ extension UIView {
     }
 }
 
+func getDatabase() throws -> Connection {
+    let dbPath = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("dictionary.sqlite3").absoluteString
+    return try Connection(dbPath)
+}
+
+func searchCharacter(search: String) -> [Card] {
+    if let db = try? getDatabase() {
+        let modSearch = "%\(search)%"
+        if let result = try? db.prepare("SELECT character, meaning, pinyin FROM dictionary WHERE character LIKE ? OR meaning LIKE ? OR pinyin LIKE ? LIMIT 25").run([modSearch, modSearch, modSearch]) {
+            let results = result.enumerated().map {row in
+                return Card(character: row.element[0] as? String ?? "", meaning: row.element[1] as? String ?? "", pinyin: row.element[2] as? String ?? "")
+            }
+            return results.sorted(by: { a, b in a.character.count < b.character.count })
+        }
+    }
+    return []
+}
+
 func extractDictionaryData() {
-    if let filepath = Bundle.main.path(forResource: "dictionary", ofType: "txt") {
-        do {
-            let data = try String(contentsOfFile: filepath, encoding: .utf8)
-            print(data)
+    do {
+        let db = try getDatabase()
+        try db.execute("PRAGMA encoding='UTF-8'")
+        try db.execute("CREATE TABLE IF NOT EXISTS dictionary (character TEXT, pinyin TEXT, meaning TEXT);")
+        
+        let numEntries = try db.scalar("SELECT COUNT(*) FROM dictionary") as? Int64 ?? 0
+        
+        // if we've already created the database, return
+        if numEntries > 0 {
+            return
         }
-        catch {
-            print("Error loading dictionary file! Path: \(filepath)")
+        
+        // regex for parsing the dictionary file
+        let regex = try NSRegularExpression(pattern: "^(.*?)\\s+(?<character>.*?)\\s+\\[(?<pinyin>.*?)\\]\\s+/(?<meaning>.*?)/", options: .caseInsensitive)
+        
+        // read the text file into the database
+        if let filepath = Bundle.main.path(forResource: "dictionary", ofType: "txt") {
+            do {
+                let data = try String(contentsOfFile: filepath, encoding: .utf8)
+                for line in data.components(separatedBy: .newlines) {
+                    if line.starts(with: "#") {
+                        continue
+                    }
+                    let nsLine = line as NSString
+                    if let match = regex.firstMatch(in: line, options: [], range: NSRange(location: 0, length: line.count)) {
+                        let character = nsLine.substring(with: match.range(withName: "character"))
+                        let meaning = nsLine.substring(with: match.range(withName: "meaning"))
+                        let pinyin = nsLine.substring(with: match.range(withName: "pinyin"))
+
+                        try db.prepare("INSERT INTO dictionary (character, meaning, pinyin) VALUES (?, ?, ?)").run([character, meaning, pinyin])
+                    }
+                }
+            }
+            catch {
+                print("Error loading dictionary file! Path: \(filepath)")
+            }
         }
+    }
+    catch {
+        print("Error setting up the SQLite database!")
     }
 }

@@ -68,7 +68,7 @@ class DeckDetailViewController: UIViewController {
                     if let realDeck = deck {
                         controller.deck = realDeck
                         controller.fromType = CardType.init(rawValue: segmentQuizFrom.titleForSegment(at: segmentQuizFrom.selectedSegmentIndex) ?? "Character") ?? .character
-                        controller.toType = CardType.init(rawValue: segmentQuizFrom.titleForSegment(at: segmentQuizFrom.selectedSegmentIndex) ?? "Pinyin") ?? .pinyin
+                        controller.toType = CardType.init(rawValue: segmentQuizTo.titleForSegment(at: segmentQuizTo.selectedSegmentIndex) ?? "Pinyin") ?? .pinyin
                     }
                 }
             }

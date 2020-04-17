@@ -356,8 +356,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnS-EA-P57">
-                                <rect key="frame" x="20" y="257" width="374" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <rect key="frame" x="5" y="257" width="404" height="81.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -371,7 +371,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p25-xp-pFI">
-                                <rect key="frame" x="207" y="640" width="207" height="222"/>
+                                <rect key="frame" x="207" y="638" width="207" height="224"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="72"/>
                                 <state key="normal" title="Yes">
@@ -382,7 +382,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h74-k2-ixr">
-                                <rect key="frame" x="0.0" y="640" width="207" height="222"/>
+                                <rect key="frame" x="0.0" y="638" width="207" height="224"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="72"/>
                                 <state key="normal" title="No">
@@ -393,7 +393,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6s-HD-AhS">
-                                <rect key="frame" x="0.0" y="418" width="414" height="222"/>
+                                <rect key="frame" x="0.0" y="413.5" width="414" height="224.5"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <state key="normal" title="Show Answer">
@@ -413,7 +413,7 @@
                             <constraint firstItem="5Le-1V-u74" firstAttribute="bottom" secondItem="p25-xp-pFI" secondAttribute="bottom" id="GeR-se-tfq"/>
                             <constraint firstItem="p25-xp-pFI" firstAttribute="leading" secondItem="h74-k2-ixr" secondAttribute="trailing" id="Icn-s4-p2z"/>
                             <constraint firstItem="E6s-HD-AhS" firstAttribute="leading" secondItem="5Le-1V-u74" secondAttribute="leading" id="LYL-IC-J7g"/>
-                            <constraint firstAttribute="trailing" secondItem="qnS-EA-P57" secondAttribute="trailing" constant="20" id="LqP-Fo-Emb"/>
+                            <constraint firstAttribute="trailing" secondItem="qnS-EA-P57" secondAttribute="trailing" constant="5" id="LqP-Fo-Emb"/>
                             <constraint firstItem="5Le-1V-u74" firstAttribute="trailing" secondItem="p25-xp-pFI" secondAttribute="trailing" id="MO6-9f-EG8"/>
                             <constraint firstItem="Evf-s4-biK" firstAttribute="top" secondItem="5Le-1V-u74" secondAttribute="top" constant="20" id="MTt-0q-jiv"/>
                             <constraint firstItem="h74-k2-ixr" firstAttribute="height" secondItem="E6s-HD-AhS" secondAttribute="height" id="MZ6-mr-8Ye"/>
@@ -424,7 +424,7 @@
                             <constraint firstItem="5Le-1V-u74" firstAttribute="bottom" secondItem="h74-k2-ixr" secondAttribute="bottom" id="Ze5-Wc-9mL"/>
                             <constraint firstItem="p25-xp-pFI" firstAttribute="height" secondItem="h74-k2-ixr" secondAttribute="height" id="a2q-eG-cCU"/>
                             <constraint firstItem="MbQ-T9-zci" firstAttribute="top" secondItem="Evf-s4-biK" secondAttribute="bottom" constant="20" id="jZn-MT-Ebg"/>
-                            <constraint firstItem="qnS-EA-P57" firstAttribute="leading" secondItem="5Le-1V-u74" secondAttribute="leading" constant="20" id="qrg-Jr-MAQ"/>
+                            <constraint firstItem="qnS-EA-P57" firstAttribute="leading" secondItem="5Le-1V-u74" secondAttribute="leading" constant="5" id="qrg-Jr-MAQ"/>
                             <constraint firstItem="Evf-s4-biK" firstAttribute="leading" secondItem="bIR-4t-6VT" secondAttribute="leadingMargin" constant="20" id="rFt-ct-GDs"/>
                             <constraint firstItem="E6s-HD-AhS" firstAttribute="top" secondItem="qnS-EA-P57" secondAttribute="bottom" constant="75" id="spV-UK-ME5"/>
                         </constraints>

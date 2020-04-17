@@ -17,6 +17,15 @@ class EditDeckViewController: UIViewController {
     var cardController : CardViewController?
     
     @IBAction func onSave(_ sender: UIBarButtonItem) {
+        if self.fieldName.text?.count ?? 0 == 0 {
+            let alert = UIAlertController(title: "Error", message: "You must enter a name for your flash card deck!", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         let db = Firestore.firestore()
         db.collection("decks").document().setData([
             "name": self.fieldName.text ?? "",

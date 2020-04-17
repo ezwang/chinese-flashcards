@@ -18,7 +18,10 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func onAdd(_ sender: Any) {
         if let text = fieldNew.text {
             // TODO: properly handle character/meaning/pinyin retrieval
-            cards.append(Card(character: text, meaning: text, pinyin: text))
+            let results = searchCharacter(search: text)
+            if results.count > 0 {
+                results.forEach { card in cards.append(card) }
+            }
         }
         cardView.reloadData()
         fieldNew.text = ""
@@ -26,6 +29,10 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

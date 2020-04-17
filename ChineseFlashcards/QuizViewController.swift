@@ -32,7 +32,7 @@ class QuizViewController: UIViewController {
     }
     
     func updateProgress() {
-        labelProgress.text = "\(cardQueue.count)/\(maxCount) Cards Reviewed"
+        labelProgress.text = "\(maxCount - cardQueue.count)/\(maxCount) Cards Reviewed"
         barProgress.setProgress(1 - Float(cardQueue.count) / Float(maxCount), animated: true)
         
         if let card = getCard() {
