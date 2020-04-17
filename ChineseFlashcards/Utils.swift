@@ -55,6 +55,47 @@ func searchCharacter(search: String) -> [Card] {
     return []
 }
 
+func getAccent(char: String, tone: Int) -> String? {
+    let lookup = [
+        "a": ["ā", "á", "ǎ", "à", "a"],
+        "e": ["ē", "é", "ě", "è", "e"],
+        "i": ["ī", "í", "ǐ", "ì", "i"],
+        "o": ["ō", "ó", "ǒ", "ò", "o"],
+        "u": ["ū", "ú", "ǔ", "ù", "u"]
+    ]
+    return lookup[char]?[tone]
+}
+
+func formatPinyin(_ input: String) -> String {
+    if let regex = try? NSRegularExpression(pattern: "(?<char>[aeiou])(?<diff>[^aeiou]*?)(?<tone>\\d)", options: .caseInsensitive) {
+        let nsInput = input as NSString
+        var output : [String] = []
+        var index = input.startIndex
+        for match in regex.matches(in: input, options: [], range: NSRange(location: 0, length: input.count)) {
+            let char = nsInput.substring(with: match.range(withName: "char"))
+            let diff = nsInput.substring(with: match.range(withName: "diff"))
+            let lower = input.index(input.startIndex, offsetBy: match.range.lowerBound)
+            output.append(String(input[index..<lower]))
+            if let tone = Int(nsInput.substring(with: match.range(withName: "tone"))) {
+                if let accent = getAccent(char: char, tone: tone) {
+                    output.append(accent)
+                }
+                else {
+                    output.append(char)
+                }
+            }
+            else {
+                output.append(char)
+            }
+            index = input.index(input.startIndex, offsetBy: match.range.upperBound)
+            output.append(diff)
+        }
+        output.append(String(input[index...]))
+        return output.joined()
+    }
+    return input.lowercased()
+}
+
 func extractDictionaryData() {
     do {
         let db = try getDatabase()

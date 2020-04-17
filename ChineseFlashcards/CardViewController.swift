@@ -47,7 +47,7 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
         
         if let cardCell = cell as? CardCell {
             cardCell.labelCharacter.text = cards[indexPath.row].character
-            cardCell.labelPinyin.text = cards[indexPath.row].pinyin
+            cardCell.labelPinyin.text = formatPinyin(cards[indexPath.row].pinyin)
             cardCell.labelMeaning.text = cards[indexPath.row].meaning
             cardCell.constraintCharacter.constant = CGFloat((cardCell.labelCharacter.text?.count ?? 0) * 35)
         }
