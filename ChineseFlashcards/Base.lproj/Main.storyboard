@@ -732,6 +732,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-nW-oYB">
                                 <rect key="frame" x="0.0" y="137" width="414" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="5PZ-X0-Bbd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vrO-Km-NXi">
                                 <rect key="frame" x="0.0" y="81" width="414" height="56"/>
@@ -758,6 +762,7 @@
                     <connections>
                         <outlet property="characterView" destination="5R1-nW-oYB" id="iQT-1R-n2z"/>
                         <outlet property="searchBar" destination="vrO-Km-NXi" id="l7v-Z2-oUS"/>
+                        <outlet property="searchIndicator" destination="5PZ-X0-Bbd" id="Nwm-2c-ndx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldm-3O-quu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

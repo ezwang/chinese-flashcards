@@ -18,6 +18,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var characterView: UITableView!
+    @IBOutlet weak var searchIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         characterView.delegate = self
@@ -51,8 +52,11 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count > 0 {
+            searchIndicator.startAnimating()
             searchCharacterOnline(search: searchText) { cards in
                 DispatchQueue.main.async {
+                    self.searchIndicator.stopAnimating()
+                    
                     self.results = cards
                     self.characterView.reloadData()
                 }
