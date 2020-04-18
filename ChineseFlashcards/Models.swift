@@ -41,4 +41,11 @@ struct QuizResults {
     var numCards : Int
     var numSuccess : Int
     var numTries : Int
+    var numOriginalCards : Int
+}
+
+enum QuizType : Int, CaseIterable {
+    case random = 0
+    case waterfall = 1
+    case append = 2
 }

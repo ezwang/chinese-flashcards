@@ -29,8 +29,8 @@ class QuizFinishViewController: UIViewController {
             else {
                 labelSuccess.textColor = UIColor.systemRed
             }
-            let tries = results.numTries / results.numCards
-            labelTries.text = "\(tries)"
+            let tries = Double(results.numTries) / Double(results.numOriginalCards)
+            labelTries.text = "\(String(format: "%.1f", tries))"
             if tries > 3 {
                 labelTries.textColor = UIColor.systemRed
             }

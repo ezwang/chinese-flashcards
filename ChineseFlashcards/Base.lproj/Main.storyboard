@@ -251,7 +251,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfR-8h-VO5">
-                                <rect key="frame" x="20" y="360.5" width="374" height="387.5"/>
+                                <rect key="frame" x="20" y="432.5" width="374" height="315.5"/>
                                 <connections>
                                     <segue destination="BMd-NG-GNd" kind="embed" identifier="card" id="bKg-r3-18N"/>
                                 </connections>
@@ -262,13 +262,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI1-db-ev5">
-                                <rect key="frame" x="20" y="289.5" width="374" height="30"/>
-                                <state key="normal" title="Start Quiz"/>
-                                <connections>
-                                    <action selector="onQuiz:" destination="sdb-7w-hR9" eventType="touchUpInside" id="5Zq-BM-3FC"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHK-T2-chY">
+                                <rect key="frame" x="20" y="401.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LZR-Sq-Ytd">
                                 <rect key="frame" x="86" y="176.5" width="242" height="32"/>
                                 <segments>
@@ -292,20 +291,44 @@
                                     <segment title="Pinyin"/>
                                     <segment title="Meaning"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onToValueChange:" destination="sdb-7w-hR9" eventType="valueChanged" id="Vqp-zP-9Tf"/>
+                                </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHK-T2-chY">
-                                <rect key="frame" x="20" y="329.5" width="374" height="21"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="odc-Jt-0jh">
+                                <rect key="frame" x="95" y="320.5" width="224" height="32"/>
+                                <segments>
+                                    <segment title="Random"/>
+                                    <segment title="Waterfall"/>
+                                    <segment title="Append"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onMethodChange:" destination="sdb-7w-hR9" eventType="valueChanged" id="wOg-wK-kpf"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="using the method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ar3-YC-8RL">
+                                <rect key="frame" x="20" y="289.5" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mI1-db-ev5">
+                                <rect key="frame" x="20" y="361.5" width="374" height="30"/>
+                                <state key="normal" title="Start Quiz"/>
+                                <connections>
+                                    <action selector="onQuiz:" destination="sdb-7w-hR9" eventType="touchUpInside" id="5Zq-BM-3FC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="Qe1-g6-aPm" secondAttribute="trailing" constant="20" id="1MO-Mc-mUA"/>
+                            <constraint firstItem="odc-Jt-0jh" firstAttribute="centerX" secondItem="ss6-kt-C8M" secondAttribute="centerX" id="1jt-Xg-e34"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="NfR-8h-VO5" secondAttribute="trailing" constant="20" id="2Bk-Jh-a2W"/>
+                            <constraint firstItem="odc-Jt-0jh" firstAttribute="top" secondItem="Ar3-YC-8RL" secondAttribute="bottom" constant="10" id="2om-35-aoT"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="Qjv-Hs-ReH" secondAttribute="trailing" constant="20" id="5Hp-o7-X8p"/>
                             <constraint firstItem="LZR-Sq-Ytd" firstAttribute="top" secondItem="Qe1-g6-aPm" secondAttribute="bottom" constant="10" id="77N-gJ-MM8"/>
+                            <constraint firstItem="Ar3-YC-8RL" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="8M4-OH-vSw"/>
                             <constraint firstItem="LZR-Sq-Ytd" firstAttribute="centerX" secondItem="ss6-kt-C8M" secondAttribute="centerX" id="Cqx-Tc-zpb"/>
                             <constraint firstItem="oHK-T2-chY" firstAttribute="top" secondItem="mI1-db-ev5" secondAttribute="bottom" constant="10" id="DKv-iR-7kR"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="mI1-db-ev5" secondAttribute="trailing" constant="20" id="JVO-vx-1I2"/>
@@ -314,16 +337,18 @@
                             <constraint firstItem="NfR-8h-VO5" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="O0n-j3-6ps"/>
                             <constraint firstItem="esN-UF-IYc" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="QLE-uF-Mxj"/>
                             <constraint firstItem="Qe1-g6-aPm" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="RCk-6v-opY"/>
+                            <constraint firstItem="Ar3-YC-8RL" firstAttribute="top" secondItem="5ox-4G-MZW" secondAttribute="bottom" constant="10" id="Rda-15-KAc"/>
                             <constraint firstItem="yvj-Zx-mGe" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="UL7-Uo-yZg"/>
                             <constraint firstItem="vmP-Y2-4OZ" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="X2a-yg-9EJ"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="esN-UF-IYc" secondAttribute="trailing" constant="20" id="ZKd-eL-DPL"/>
                             <constraint firstItem="mI1-db-ev5" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="aLJ-5c-0FE"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="yvj-Zx-mGe" secondAttribute="trailing" constant="20" id="aaT-jI-oGH"/>
+                            <constraint firstItem="6LF-v4-Uau" firstAttribute="trailing" secondItem="Ar3-YC-8RL" secondAttribute="trailing" constant="20" id="dbe-ad-ou6"/>
                             <constraint firstItem="yvj-Zx-mGe" firstAttribute="top" secondItem="LZR-Sq-Ytd" secondAttribute="bottom" constant="10" id="eq2-02-ILf"/>
                             <constraint firstItem="Qe1-g6-aPm" firstAttribute="top" secondItem="Qjv-Hs-ReH" secondAttribute="bottom" constant="10" id="f7O-lU-VR9"/>
                             <constraint firstItem="vmP-Y2-4OZ" firstAttribute="top" secondItem="6LF-v4-Uau" secondAttribute="top" constant="20" id="fj3-RQ-bvA"/>
                             <constraint firstItem="oHK-T2-chY" firstAttribute="leading" secondItem="6LF-v4-Uau" secondAttribute="leading" constant="20" id="gs2-BI-Xk2"/>
-                            <constraint firstItem="mI1-db-ev5" firstAttribute="top" secondItem="5ox-4G-MZW" secondAttribute="bottom" constant="10" id="jDm-GL-9pA"/>
+                            <constraint firstItem="mI1-db-ev5" firstAttribute="top" secondItem="odc-Jt-0jh" secondAttribute="bottom" constant="10" id="ipN-ra-lYs"/>
                             <constraint firstItem="NfR-8h-VO5" firstAttribute="top" secondItem="oHK-T2-chY" secondAttribute="bottom" constant="10" id="sgM-rS-FMs"/>
                             <constraint firstItem="5ox-4G-MZW" firstAttribute="centerX" secondItem="ss6-kt-C8M" secondAttribute="centerX" id="vaA-sn-sfB"/>
                             <constraint firstItem="6LF-v4-Uau" firstAttribute="bottom" secondItem="esN-UF-IYc" secondAttribute="bottom" constant="20" id="vz7-f9-dMP"/>
@@ -339,6 +364,7 @@
                         <outlet property="labelDescription" destination="Qjv-Hs-ReH" id="qTe-ha-2Mv"/>
                         <outlet property="labelName" destination="vmP-Y2-4OZ" id="Umk-gQ-fxj"/>
                         <outlet property="segmentQuizFrom" destination="LZR-Sq-Ytd" id="Qux-Jk-rwI"/>
+                        <outlet property="segmentQuizMethod" destination="odc-Jt-0jh" id="cAi-KC-6bg"/>
                         <outlet property="segmentQuizTo" destination="5ox-4G-MZW" id="6jn-y6-mz3"/>
                         <segue destination="iOm-6d-GVz" kind="show" identifier="quiz" id="4a2-c8-cU2"/>
                     </connections>
@@ -739,15 +765,15 @@
             <objects>
                 <viewController id="BMd-NG-GNd" customClass="CardViewController" customModule="ChineseFlashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gL1-o7-uX2">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="387.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="315.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HsP-0h-uCu">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="352.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="280.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnu-aS-EAO">
-                                <rect key="frame" x="154.5" y="357.5" width="65" height="30"/>
+                                <rect key="frame" x="154.5" y="285.5" width="65" height="30"/>
                                 <state key="normal" title="Add Card"/>
                                 <connections>
                                     <action selector="onAdd:" destination="BMd-NG-GNd" eventType="touchUpInside" id="1H0-kv-9Bt"/>

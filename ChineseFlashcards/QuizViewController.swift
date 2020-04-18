@@ -8,9 +8,126 @@
 
 import UIKit
 
+protocol ReviewAlgorithm {
+    func onYes()
+    func onNo()
+    func addCards(cards: [Card])
+    func getCard() -> Card?
+    func getCardCount() -> Int
+}
+
+class RandomAlgorithm : ReviewAlgorithm {
+    var cardQueue : [Card] = []
+    var maxCardCount : Int = 0
+    
+    func onYes() {
+        _ = cardQueue.popLast()
+    }
+    
+    func onNo() {
+        _ = cardQueue.popLast()
+    }
+    
+    func addCards(cards: [Card]) {
+        cardQueue.append(contentsOf: cards)
+        maxCardCount += cards.count
+        cardQueue.shuffle()
+    }
+    
+    func getCard() -> Card? {
+        return cardQueue.last
+    }
+    
+    func getCardCount() -> Int {
+        return maxCardCount
+    }
+}
+
+class AppendAlgorithm : ReviewAlgorithm {
+    var cardQueue : [Card] = []
+    var maxCardCount : Int = 0
+    
+    func onYes() {
+        _ = cardQueue.popLast()
+    }
+    
+    func onNo() {
+        if let card = cardQueue.popLast() {
+            cardQueue.insert(card, at: 0)
+            maxCardCount += 1
+        }
+    }
+    
+    func addCards(cards: [Card]) {
+        cardQueue.append(contentsOf: cards)
+        maxCardCount += cards.count
+        cardQueue.shuffle()
+    }
+    
+    func getCard() -> Card? {
+        return cardQueue.last
+    }
+    
+    func getCardCount() -> Int {
+        return maxCardCount
+    }
+}
+
+class WaterfallAlgorithm : ReviewAlgorithm {
+    var piles : [[Card]] = [[]]
+    var currentPile : Int = 0
+    var currentIterator : Int = 0
+    var maxCardCount : Int = 0
+    
+    func onYes() {
+        nextCard()
+    }
+    
+    func onNo() {
+        let card = piles[currentPile][currentIterator]
+        if piles.count <= currentPile + 1 {
+            piles.append([])
+            maxCardCount += piles[currentPile].count
+        }
+        piles[currentPile + 1].append(card)
+        maxCardCount += 1
+        nextCard()
+    }
+    
+    func nextCard() {
+        currentIterator += 1
+        if currentIterator >= piles[currentPile].count {
+            currentIterator = 0
+            if piles.count <= currentPile + 1 {
+                currentPile -= 1
+                _ = piles.popLast()
+            }
+            else {
+                currentPile += 1
+            }
+        }
+    }
+    
+    func addCards(cards: [Card]) {
+        piles[0].append(contentsOf: cards)
+        piles[0].shuffle()
+        maxCardCount += cards.count
+    }
+    
+    func getCard() -> Card? {
+        if (currentPile < 0) {
+            return nil
+        }
+        return piles[currentPile][currentIterator]
+    }
+    
+    func getCardCount() -> Int {
+        return maxCardCount
+    }
+}
+
 class QuizViewController: UIViewController {
     var deck : Deck?
-    var cardQueue : [Card] = []
     var maxCount : Int = 1
     var answerShown : Bool = false
     var fromType : CardType = .character
@@ -18,6 +135,10 @@ class QuizViewController: UIViewController {
     
     var successCount : Int = 0
     var failureCount : Int = 0
+    var numOriginal : Int = 0
+    
+    var quizType : QuizType = .random
+    var algorithm : ReviewAlgorithm?
     
     @IBOutlet weak var labelProgress: UILabel!
     @IBOutlet weak var barProgress: UIProgressView!
@@ -25,10 +146,19 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var labelQuestion: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
+        switch quizType {
+        case .waterfall:
+            algorithm = WaterfallAlgorithm()
+        case .append:
+            algorithm = AppendAlgorithm()
+        default:
+            algorithm = RandomAlgorithm()
+        }
+        
         if let realDeck = deck {
-            cardQueue = realDeck.cards
-            cardQueue.shuffle()
-            maxCount = cardQueue.count
+            algorithm?.addCards(cards: realDeck.cards)
+            maxCount = algorithm?.getCardCount() ?? 1
+            numOriginal = realDeck.cards.count
         }
         
         labelQuestion.adjustsFontSizeToFitWidth = true
@@ -41,10 +171,11 @@ class QuizViewController: UIViewController {
     }
     
     func updateProgress() {
-        labelProgress.text = "\(maxCount - cardQueue.count)/\(maxCount) Cards Reviewed"
-        barProgress.setProgress(1 - Float(cardQueue.count) / Float(maxCount), animated: true)
+        maxCount = algorithm?.getCardCount() ?? 1
+        labelProgress.text = "\(successCount + failureCount)/\(maxCount) Cards Reviewed"
+        barProgress.setProgress(Float(successCount + failureCount) / Float(maxCount), animated: true)
         
-        if let card = getCard() {
+        if let card = algorithm?.getCard() {
             switch fromType {
             case .character:
                 labelQuestion.text = card.character
@@ -63,12 +194,8 @@ class QuizViewController: UIViewController {
         }
     }
     
-    func getCard() -> Card? {
-        return cardQueue.last
-    }
-    
     @IBAction func onShow(_ sender: Any) {
-        if let card = getCard() {
+        if let card = algorithm?.getCard() {
             switch toType {
             case .character:
                 labelAnswer.setTitle(card.character, for: .normal)
@@ -87,7 +214,8 @@ class QuizViewController: UIViewController {
         // if the answer is shown, continue and mark as no
         if (answerShown) {
             failureCount += 1
-            _ = cardQueue.popLast()
+            algorithm?.onNo()
+
             updateProgress()
         }
         else {
@@ -98,14 +226,14 @@ class QuizViewController: UIViewController {
     
     @IBAction func onYes(_ sender: Any) {
         successCount += 1
-        _ = cardQueue.popLast()
+        algorithm?.onYes()
         updateProgress()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "done" {
             if let controller = segue.destination as? QuizFinishViewController {
-                controller.results = QuizResults(numCards: maxCount, numSuccess: successCount, numTries: successCount + failureCount)
+                controller.results = QuizResults(numCards: maxCount, numSuccess: successCount, numTries: numOriginal + failureCount, numOriginalCards: numOriginal)
             }
         }
     }

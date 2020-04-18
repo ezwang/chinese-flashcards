@@ -14,6 +14,7 @@ class DeckDetailViewController: UIViewController {
     @IBOutlet weak var labelDescription: UITextView!
     @IBOutlet weak var segmentQuizFrom: UISegmentedControl!
     @IBOutlet weak var segmentQuizTo: UISegmentedControl!
+    @IBOutlet weak var segmentQuizMethod: UISegmentedControl!
     
     var deck : Deck?
     
@@ -25,6 +26,10 @@ class DeckDetailViewController: UIViewController {
         labelDescription.layer.borderWidth = 1
         labelDescription.layer.borderColor = UIColor.lightGray.cgColor
         labelDescription.layer.cornerRadius = 5
+        
+        segmentQuizFrom.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "quizFromValue")
+        segmentQuizTo.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "quizToValue")
+        segmentQuizMethod.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "quizMethodValue")
     }
     
     @IBAction func onDelete(_ sender: Any) {
@@ -63,6 +68,16 @@ class DeckDetailViewController: UIViewController {
             segmentQuizTo.setTitle("Character", forSegmentAt: 0)
             segmentQuizTo.setTitle("Pinyin", forSegmentAt: 1)
         }
+        
+        UserDefaults.standard.set(segmentQuizFrom.selectedSegmentIndex, forKey: "quizFromValue")
+    }
+    
+    @IBAction func onToValueChange(_ sender: Any) {
+        UserDefaults.standard.set(segmentQuizTo.selectedSegmentIndex, forKey: "quizToValue")
+    }
+    
+    @IBAction func onMethodChange(_ sender: Any) {
+        UserDefaults.standard.set(segmentQuizMethod.selectedSegmentIndex, forKey: "quizMethodValue")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,6 +96,7 @@ class DeckDetailViewController: UIViewController {
                         controller.deck = realDeck
                         controller.fromType = CardType.init(rawValue: segmentQuizFrom.titleForSegment(at: segmentQuizFrom.selectedSegmentIndex) ?? "Character") ?? .character
                         controller.toType = CardType.init(rawValue: segmentQuizTo.titleForSegment(at: segmentQuizTo.selectedSegmentIndex) ?? "Pinyin") ?? .pinyin
+                        controller.quizType = QuizType.init(rawValue: segmentQuizMethod.selectedSegmentIndex) ?? .random
                     }
                 }
             }
