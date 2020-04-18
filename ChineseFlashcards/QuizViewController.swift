@@ -16,6 +16,9 @@ class QuizViewController: UIViewController {
     var fromType : CardType = .character
     var toType : CardType = .pinyin
     
+    var successCount : Int = 0
+    var failureCount : Int = 0
+    
     @IBOutlet weak var labelProgress: UILabel!
     @IBOutlet weak var barProgress: UIProgressView!
     @IBOutlet weak var labelAnswer: UIButton!
@@ -30,6 +33,9 @@ class QuizViewController: UIViewController {
         
         labelQuestion.adjustsFontSizeToFitWidth = true
         labelAnswer.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        successCount = 0
+        failureCount = 0
         
         updateProgress()
     }
@@ -80,6 +86,7 @@ class QuizViewController: UIViewController {
     @IBAction func onNo(_ sender: Any) {
         // if the answer is shown, continue and mark as no
         if (answerShown) {
+            failureCount += 1
             _ = cardQueue.popLast()
             updateProgress()
         }
@@ -90,7 +97,16 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func onYes(_ sender: Any) {
+        successCount += 1
         _ = cardQueue.popLast()
         updateProgress()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "done" {
+            if let controller = segue.destination as? QuizFinishViewController {
+                controller.results = QuizResults(numCards: maxCount, numSuccess: successCount, numTries: successCount + failureCount)
+            }
+        }
     }
 }

@@ -36,3 +36,9 @@ enum CardType: String, CaseIterable {
     case character = "Character"
     case pinyin = "Pinyin"
 }
+
+struct QuizResults {
+    var numCards : Int
+    var numSuccess : Int
+    var numTries : Int
+}
