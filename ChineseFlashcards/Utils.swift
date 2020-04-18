@@ -42,6 +42,44 @@ func getDatabase() throws -> Connection {
     return try Connection(dbPath)
 }
 
+struct NaverResponse : Codable {
+    var items : [[[[String]]]]
+}
+
+func searchCharacterOnline(search: String, callback: @escaping ([Card]) -> Void) {
+    let str = "https://ac.dict.naver.com/linedictweb/ac?q=\(search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")&st=011&r_lt=000&q_enc=UTF-8&r_format=json&r_enc=UTF-8"
+    if let url = URL(string: str) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                let decoder = JSONDecoder()
+                do {
+                    let resp = try decoder.decode(NaverResponse.self, from: data)
+                    let pinyinResults = resp.items[1]
+                    let cards = pinyinResults.map { (chr: [[String]]) -> Card in
+                        let character : String = chr[2][0]
+                        let meaning : String = chr[3][0]
+                        let pinyin : String = chr[4][0]
+                        return Card(character: character.trimmingCharacters(in: .whitespacesAndNewlines), meaning: meaning.trimmingCharacters(in: .whitespacesAndNewlines), pinyin: pinyin.trimmingCharacters(in: .whitespacesAndNewlines))
+                    }
+                    callback(cards)
+                }
+                catch {
+                    print("Failed to decode search response: \(error)")
+                }
+            }
+            else if let error = error {
+                print("Error occured when executing search query: \(error)")
+            }
+            else {
+                print("Unknown error occured when executing search query")
+            }
+        }.resume()
+    }
+    else {
+        print("Could not create search URL: \(str)")
+    }
+}
+
 func searchCharacter(search: String) -> [Card] {
     if let db = try? getDatabase() {
         let modSearch = "%\(search)%"
@@ -130,7 +168,7 @@ func extractDictionaryData() {
                         let character = nsLine.substring(with: match.range(withName: "character"))
                         let meaning = nsLine.substring(with: match.range(withName: "meaning"))
                         let pinyin = nsLine.substring(with: match.range(withName: "pinyin"))
-
+                        
                         try db.prepare("INSERT INTO dictionary (character, meaning, pinyin) VALUES (?, ?, ?)").run([character, meaning, pinyin])
                     }
                 }

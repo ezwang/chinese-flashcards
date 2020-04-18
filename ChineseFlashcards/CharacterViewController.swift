@@ -50,7 +50,17 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.results = searchCharacter(search: searchText)
-        characterView.reloadData()
+        if searchText.count > 0 {
+            searchCharacterOnline(search: searchText) { cards in
+                DispatchQueue.main.async {
+                    self.results = cards
+                    self.characterView.reloadData()
+                }
+            }
+        }
+        else {
+            self.results = []
+            self.characterView.reloadData()
+        }
     }
 }
