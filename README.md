@@ -38,4 +38,6 @@ The second option allows you to show the answer after pressing the "No" button i
 
 ## Screenshots
 
-![Screenshot 1](/images/screenshot1.png?raw=true "Deck Detail View")
+<img src="/images/screenshot1.png?raw=true" width="40%" />
+<img src="/images/screenshot2.png?raw=true" width="40%" />
+<img src="/images/screenshot3.png?raw=true" width="40%" />
