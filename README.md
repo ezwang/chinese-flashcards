@@ -38,6 +38,8 @@ The second option allows you to show the answer after pressing the "No" button i
 
 ## Screenshots
 
-<img src="/images/screenshot1.png?raw=true" width="40%" />
-<img src="/images/screenshot2.png?raw=true" width="40%" />
-<img src="/images/screenshot3.png?raw=true" width="40%" />
+<p>
+  <img src="/images/screenshot1.png?raw=true" width="30%" />
+  <img src="/images/screenshot2.png?raw=true" width="30%" />
+  <img src="/images/screenshot3.png?raw=true" width="30%" />
+</p>
