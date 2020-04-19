@@ -371,6 +371,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="e3F-nh-jpD"/>
                     <connections>
+                        <outlet property="buttonDeleteDeck" destination="esN-UF-IYc" id="lMz-9m-TuC"/>
+                        <outlet property="buttonEditDeck" destination="RCF-IH-oLV" id="3QV-t4-GCa"/>
                         <outlet property="labelDescription" destination="Qjv-Hs-ReH" id="qTe-ha-2Mv"/>
                         <outlet property="labelName" destination="vmP-Y2-4OZ" id="Umk-gQ-fxj"/>
                         <outlet property="segmentQuizFrom" destination="LZR-Sq-Ytd" id="Qux-Jk-rwI"/>
@@ -590,22 +592,22 @@
             <objects>
                 <viewController title="EditDeckView" id="ouK-78-nQR" customClass="EditDeckViewController" customModule="ChineseFlashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZKI-Vm-knr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cja-3c-1RU">
-                                <rect key="frame" x="20" y="193" width="374" height="21"/>
+                                <rect key="frame" x="20" y="105" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJz-Fc-6Ng">
-                                <rect key="frame" x="20" y="139" width="374" height="34"/>
+                                <rect key="frame" x="20" y="51" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7NN-YW-29p">
-                                <rect key="frame" x="20" y="224" width="374" height="50"/>
+                                <rect key="frame" x="20" y="136" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="33d-Bl-VHV"/>
@@ -615,28 +617,28 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpN-x6-Kk3">
-                                <rect key="frame" x="20" y="108" width="374" height="21"/>
+                                <rect key="frame" x="20" y="20" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFY-lo-rJX">
-                                <rect key="frame" x="20" y="345" width="374" height="21"/>
+                                <rect key="frame" x="20" y="257" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-yp-wsd">
-                                <rect key="frame" x="20" y="376" width="374" height="417"/>
+                                <rect key="frame" x="20" y="288" width="374" height="500"/>
                                 <connections>
                                     <segue destination="BMd-NG-GNd" kind="embed" identifier="card" id="phG-oe-LZ6"/>
                                 </connections>
                             </containerView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r1b-QA-ttH">
-                                <rect key="frame" x="345" y="294" width="51" height="31"/>
+                                <rect key="frame" x="345" y="206" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Publicly Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyg-U8-lIq">
-                                <rect key="frame" x="20" y="299" width="325" height="21"/>
+                                <rect key="frame" x="20" y="211" width="325" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -817,6 +819,7 @@
                         <viewLayoutGuide key="safeArea" id="gfr-PM-UeZ"/>
                     </view>
                     <connections>
+                        <outlet property="btnAddCard" destination="Jnu-aS-EAO" id="y33-wK-z87"/>
                         <outlet property="cardView" destination="HsP-0h-uCu" id="lmG-EU-vm9"/>
                         <segue destination="oIh-Eg-K25" kind="showDetail" identifier="character" id="av9-p1-e0E"/>
                     </connections>
@@ -919,6 +922,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Public Decks" id="16N-Ge-mZF"/>
+                    <connections>
+                        <segue destination="sdb-7w-hR9" kind="showDetail" identifier="deckDetail" id="eIf-d3-6hp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJo-98-vSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1111,7 +1117,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="bI6-SG-5Ay"/>
         <segue reference="bKg-r3-18N"/>
-        <segue reference="m8D-VR-60c"/>
+        <segue reference="f2d-0L-NFg"/>
+        <segue reference="eIf-d3-6hp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>

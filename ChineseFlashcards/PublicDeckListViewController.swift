@@ -43,7 +43,23 @@ class PublicDeckListViewController : UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "deckDetail", sender: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return decks.count
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "deckDetail" {
+            if let idx = sender as? Int {
+                if let controller = segue.destination as? DeckDetailViewController {
+                    controller.deck = decks[idx]
+                    controller.isReadOnly = true
+                }
+            }
+        }
     }
 }

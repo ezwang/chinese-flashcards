@@ -12,9 +12,11 @@ import FirebaseFirestore
 class CardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CharacterDelegate {
     
     @IBOutlet weak var cardView: UITableView!
+    @IBOutlet weak var btnAddCard: UIButton!
     
     var cards : [Card] = []
     var deckId : String?
+    var isReadOnly : Bool = false
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
@@ -60,6 +62,10 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
         cardView.layer.borderWidth = 1
         cardView.layer.borderColor = UIColor.lightGray.cgColor
         cardView.layer.cornerRadius = 5
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        btnAddCard.isEnabled = !isReadOnly
     }
     
     @IBAction func onAdd(_ sender: Any) {

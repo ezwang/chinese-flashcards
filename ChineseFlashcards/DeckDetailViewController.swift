@@ -15,9 +15,13 @@ class DeckDetailViewController: UIViewController, EditDeckDelegate {
     @IBOutlet weak var segmentQuizFrom: UISegmentedControl!
     @IBOutlet weak var segmentQuizTo: UISegmentedControl!
     @IBOutlet weak var segmentQuizMethod: UISegmentedControl!
+
+    @IBOutlet weak var buttonEditDeck: UIButton!
+    @IBOutlet weak var buttonDeleteDeck: UIButton!
     
     var deck : Deck?
     var cardController : CardViewController?
+    var isReadOnly : Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
         updateDeckDisplay()
@@ -35,6 +39,9 @@ class DeckDetailViewController: UIViewController, EditDeckDelegate {
     func updateDeckDisplay() {
         labelName.text = deck?.name
         labelDescription.text = deck?.description
+        
+        buttonEditDeck.isEnabled = !isReadOnly
+        buttonDeleteDeck.isEnabled = !isReadOnly
     }
     
     @IBAction func onDelete(_ sender: Any) {
@@ -105,6 +112,7 @@ class DeckDetailViewController: UIViewController, EditDeckDelegate {
                     cardController = controller
                     controller.deckId = realDeck.id
                     controller.cards = realDeck.cards
+                    controller.isReadOnly = isReadOnly
                 }
             }
         }
