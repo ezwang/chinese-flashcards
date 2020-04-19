@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class DeckDetailViewController: UIViewController {
+class DeckDetailViewController: UIViewController, EditDeckDelegate {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDescription: UITextView!
     @IBOutlet weak var segmentQuizFrom: UISegmentedControl!
@@ -17,10 +17,10 @@ class DeckDetailViewController: UIViewController {
     @IBOutlet weak var segmentQuizMethod: UISegmentedControl!
     
     var deck : Deck?
+    var cardController : CardViewController?
     
     override func viewWillAppear(_ animated: Bool) {
-        labelName.text = deck?.name
-        labelDescription.text = deck?.description
+        updateDeckDisplay()
         
         // style description box
         labelDescription.layer.borderWidth = 1
@@ -30,6 +30,11 @@ class DeckDetailViewController: UIViewController {
         segmentQuizFrom.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "quizFromValue")
         segmentQuizTo.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "quizToValue")
         segmentQuizMethod.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "quizMethodValue")
+    }
+    
+    func updateDeckDisplay() {
+        labelName.text = deck?.name
+        labelDescription.text = deck?.description
     }
     
     @IBAction func onDelete(_ sender: Any) {
@@ -80,10 +85,24 @@ class DeckDetailViewController: UIViewController {
         UserDefaults.standard.set(segmentQuizMethod.selectedSegmentIndex, forKey: "quizMethodValue")
     }
     
+    func onEdit(id: String) {
+        Firestore.firestore().collection("decks").document(id).getDocument {
+            document, error in
+            if let document = document {
+                self.deck = Deck.fromFirebase(document)
+                DispatchQueue.main.async {
+                    self.updateDeckDisplay()
+                    self.cardController?.setCards(self.deck?.cards ?? [])
+                }
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "card" {
             if let controller = segue.destination as? CardViewController {
                 if let realDeck = deck {
+                    cardController = controller
                     controller.deckId = realDeck.id
                     controller.cards = realDeck.cards
                 }
@@ -98,6 +117,14 @@ class DeckDetailViewController: UIViewController {
                         controller.toType = CardType.init(rawValue: segmentQuizTo.titleForSegment(at: segmentQuizTo.selectedSegmentIndex) ?? "Pinyin") ?? .pinyin
                         controller.quizType = QuizType.init(rawValue: segmentQuizMethod.selectedSegmentIndex) ?? .random
                     }
+                }
+            }
+        }
+        else if segue.identifier == "edit" {
+            if let controller = segue.destination as? EditDeckViewController {
+                if let realDeck = deck {
+                    controller.deck = realDeck
+                    controller.delegate = self
                 }
             }
         }

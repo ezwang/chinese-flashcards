@@ -28,6 +28,7 @@ struct Deck {
     var id : String
     var name : String
     var description : String
+    var isPublic : Bool
     var cards : [Card]
 }
 

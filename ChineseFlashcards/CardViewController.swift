@@ -83,4 +83,9 @@ class CardViewController : UIViewController, UITableViewDelegate, UITableViewDat
             Firestore.firestore().collection("decks").document(did).updateData(["cards": FieldValue.arrayUnion([card.dict])])
         }
     }
+    
+    func setCards(_ newCards: [Card]) {
+        self.cards = newCards
+        cardView.reloadData()
+    }
 }

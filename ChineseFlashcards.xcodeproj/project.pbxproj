@@ -31,6 +31,8 @@
 		07A5B539244A5ECF00986B4C /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5B538244A5ECF00986B4C /* CharacterViewController.swift */; };
 		07A5B53B244A689B00986B4C /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A5B53A244A689B00986B4C /* CardCell.xib */; };
 		07A5B53D244A6A2F00986B4C /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5B53C244A6A2F00986B4C /* CardCell.swift */; };
+		07A5B541244B52F100986B4C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5B540244B52F100986B4C /* SettingsViewController.swift */; };
+		07A5B543244CBE3300986B4C /* PublicDeckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5B542244CBE3300986B4C /* PublicDeckListViewController.swift */; };
 		55CA88978099115AE509CB86 /* Pods_ChineseFlashcards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5F96E8E13882B2D36F3524 /* Pods_ChineseFlashcards.framework */; };
 		8EC44CE0CF328A0D4C8EE16B /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59F738D075A537158767D22 /* Pods_ChineseFlashcards_ChineseFlashcardsUITests.framework */; };
 		CF39408A1B8C435A957538B6 /* Pods_ChineseFlashcardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FA46EA8261A579C3574578 /* Pods_ChineseFlashcardsTests.framework */; };
@@ -84,6 +86,8 @@
 		07A5B538244A5ECF00986B4C /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		07A5B53A244A689B00986B4C /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		07A5B53C244A6A2F00986B4C /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		07A5B540244B52F100986B4C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		07A5B542244CBE3300986B4C /* PublicDeckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicDeckListViewController.swift; sourceTree = "<group>"; };
 		0E21352BF70FE6CE24D46D1A /* Pods-ChineseFlashcards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseFlashcards.release.xcconfig"; path = "Target Support Files/Pods-ChineseFlashcards/Pods-ChineseFlashcards.release.xcconfig"; sourceTree = "<group>"; };
 		0F5F96E8E13882B2D36F3524 /* Pods_ChineseFlashcards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseFlashcards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FA46EA8261A579C3574578 /* Pods_ChineseFlashcardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseFlashcardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +175,8 @@
 				07A5B538244A5ECF00986B4C /* CharacterViewController.swift */,
 				07A5B53A244A689B00986B4C /* CardCell.xib */,
 				07A5B53C244A6A2F00986B4C /* CardCell.swift */,
+				07A5B540244B52F100986B4C /* SettingsViewController.swift */,
+				07A5B542244CBE3300986B4C /* PublicDeckListViewController.swift */,
 			);
 			path = ChineseFlashcards;
 			sourceTree = "<group>";
@@ -474,9 +480,11 @@
 				07A5B533244A264000986B4C /* Models.swift in Sources */,
 				07A5B53D244A6A2F00986B4C /* CardCell.swift in Sources */,
 				076EFB462443A01500AE5225 /* AppDelegate.swift in Sources */,
+				07A5B541244B52F100986B4C /* SettingsViewController.swift in Sources */,
 				07A5B52B244A259400986B4C /* RegisterViewController.swift in Sources */,
 				07A5B523244A24D200986B4C /* DeckDetailViewController.swift in Sources */,
 				07A5B531244A261500986B4C /* LogoViewController.swift in Sources */,
+				07A5B543244CBE3300986B4C /* PublicDeckListViewController.swift in Sources */,
 				07A5B527244A254700986B4C /* QuizViewController.swift in Sources */,
 				07A5B525244A251B00986B4C /* CardViewController.swift in Sources */,
 				07A5B52F244A25EB00986B4C /* LoginViewController.swift in Sources */,

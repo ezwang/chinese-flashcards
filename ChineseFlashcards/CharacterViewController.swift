@@ -52,13 +52,19 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count > 0 {
-            searchIndicator.startAnimating()
-            searchCharacterOnline(search: searchText) { cards in
-                DispatchQueue.main.async {
-                    self.searchIndicator.stopAnimating()
-                    
-                    self.results = cards
-                    self.characterView.reloadData()
+            if UserDefaults.standard.bool(forKey: "useOffline") {
+                self.results = searchCharacter(search: searchText)
+                self.characterView.reloadData()
+            }
+            else {
+                searchIndicator.startAnimating()
+                searchCharacterOnline(search: searchText) { cards in
+                    DispatchQueue.main.async {
+                        self.searchIndicator.stopAnimating()
+                        
+                        self.results = cards
+                        self.characterView.reloadData()
+                    }
                 }
             }
         }

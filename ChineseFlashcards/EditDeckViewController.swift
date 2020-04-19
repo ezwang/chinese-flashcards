@@ -10,11 +10,52 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
+protocol EditDeckDelegate {
+    func onEdit(id: String)
+}
+
 class EditDeckViewController: UIViewController {
     @IBOutlet weak var fieldName: UITextField!
     @IBOutlet weak var fieldDescription: UITextView!
+    @IBOutlet weak var switchPublic: UISwitch!
     
     var cardController : CardViewController?
+    var deck : Deck?
+    var delegate : EditDeckDelegate?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let deck = deck {
+            fieldName.text = deck.name
+            fieldDescription.text = deck.description
+            switchPublic.isOn = deck.isPublic
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if deck != nil {
+            delegate?.onEdit(id: doSave())
+        }
+    }
+    
+    func doSave() -> String {
+        let db = Firestore.firestore()
+        let deckDocument = deck != nil ? db.collection("decks").document(deck?.id ?? ""
+            ) : db.collection("decks").document()
+        deckDocument.setData([
+            "name": self.fieldName.text ?? "",
+            "description": self.fieldDescription.text ?? "",
+            "owner": Auth.auth().currentUser?.uid ?? "public",
+            "public": switchPublic.isOn,
+            "cards": cardController?.cards.map { card -> NSDictionary in
+                return [
+                    "meaning": card.meaning,
+                    "character": card.character,
+                    "pinyin": card.pinyin
+                ]
+                } ?? []
+        ])
+        return deckDocument.documentID
+    }
     
     @IBAction func onSave(_ sender: UIBarButtonItem) {
         if self.fieldName.text?.count ?? 0 == 0 {
@@ -26,19 +67,8 @@ class EditDeckViewController: UIViewController {
             return
         }
         
-        let db = Firestore.firestore()
-        db.collection("decks").document().setData([
-            "name": self.fieldName.text ?? "",
-            "description": self.fieldDescription.text ?? "",
-            "owner": Auth.auth().currentUser?.uid ?? "public",
-            "cards": cardController?.cards.map { card -> NSDictionary in
-                return [
-                    "meaning": card.meaning,
-                    "character": card.character,
-                    "pinyin": card.pinyin
-                ]
-                } ?? []
-        ])
+        _ = doSave()
+
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -53,6 +83,10 @@ class EditDeckViewController: UIViewController {
         if segue.identifier == "card" {
             if let controller = segue.destination as? CardViewController {
                 self.cardController = controller
+                if let deck = deck {
+                    controller.cards = deck.cards
+                    controller.deckId = deck.id
+                }
             }
         }
     }

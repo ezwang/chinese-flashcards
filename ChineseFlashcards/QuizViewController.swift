@@ -212,7 +212,7 @@ class QuizViewController: UIViewController {
     
     @IBAction func onNo(_ sender: Any) {
         // if the answer is shown, continue and mark as no
-        if (answerShown) {
+        if (answerShown || !UserDefaults.standard.bool(forKey: "useShowAnswer")) {
             failureCount += 1
             algorithm?.onNo()
 

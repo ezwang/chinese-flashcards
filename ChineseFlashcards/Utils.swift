@@ -37,6 +37,29 @@ extension UIView {
     }
 }
 
+extension Card {
+    static func fromFirebase(_ card : NSDictionary) -> Card {
+        return Card(character: card["character"] as? String ?? "", meaning: card["meaning"] as? String ?? "", pinyin: card["pinyin"] as? String ?? "")
+    }
+}
+
+extension Deck {
+    static func fromFirebase(_ doc : DocumentSnapshot) -> Deck {
+        if let data = doc.data() {
+            let rawCards = data["cards"] as? [NSDictionary] ?? []
+            let cards = rawCards.map(Card.fromFirebase)
+            return Deck(
+                id: doc.documentID,
+                name: data["name"] as? String ?? "",
+                description: data["description"] as? String ?? "",
+                isPublic: data["public"] as? Bool ?? false,
+                cards: cards
+            )
+        }
+        return Deck(id: "", name: "", description: "", isPublic: false, cards: [])
+    }
+}
+
 func getDatabase() throws -> Connection {
     let dbPath = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("dictionary.sqlite3").absoluteString
     return try Connection(dbPath)

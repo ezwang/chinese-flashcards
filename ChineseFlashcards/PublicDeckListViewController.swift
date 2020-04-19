@@ -1,23 +1,23 @@
 //
-//  DeckListViewController.swift
+//  PublicDeckListViewController.swift
 //  ChineseFlashcards
 //
-//  Created by Eric Wang on 4/17/20.
+//  Created by Eric Wang on 4/19/20.
 //  Copyright © 2020 Eric Wang. All rights reserved.
 //
 
 import UIKit
 import FirebaseFirestore
-import FirebaseAuth
 
-class DeckListViewController: UITableViewController {
+class PublicDeckListViewController : UITableViewController {
     var decks : [Deck] = []
     var deckListener : ListenerRegistration?
     
     override func viewWillAppear(_ animated: Bool) {
         let db = Firestore.firestore()
-        let userId = Auth.auth().currentUser?.uid ?? "public"
-        self.deckListener = db.collection("decks").whereField("owner", isEqualTo: userId).addSnapshotListener { querySnapshot, error in
+
+        self.deckListener = db.collection("decks").whereField("public", isEqualTo: true).addSnapshotListener {
+            querySnapshot, error in
             guard let snapshot = querySnapshot else {
                 return
             }
@@ -34,10 +34,6 @@ class DeckListViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return decks.count
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deckCell")!
         
@@ -47,18 +43,7 @@ class DeckListViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "deckDetail", sender: indexPath.row)
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "deckDetail" {
-            if let row = sender as? Int {
-                if let controller = segue.destination as? DeckDetailViewController {
-                    controller.deck = decks[row]
-                }
-            }
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return decks.count
     }
 }
