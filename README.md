@@ -12,7 +12,7 @@ Has the ability to create an account, login to an account, and logout.
 
 You can mark a deck as public, which allows anyone to see the deck. There is a tab in the main view to view both your decks and other people's public decks.
 
-There are three separate algorithms that the user can selected:
+There are three separate algorithms that the user can select:
 - Random: All of the cards in the deck are shuffled and the user goes through them one time.
 - Append: All of the cards in the deck are shuffled. Any card that the user gets wrong is added to the end of the deck.
 - Waterfall: All of the cards in the deck are shuffled. For each card that the user gets wrong, place it in a new pile. After the initial pile has been reviewed, move on to the next pile. Repeat this process for the next pile until the user does not get any wrong (no more new piles). Go back through the piles in reverse order until you reach the first pile again, repeating the new pile process if any are wrong.
@@ -35,3 +35,7 @@ The second option allows you to show the answer after pressing the "No" button i
 - Ensure that you have [CocoaPods](https://cocoapods.org/) installed.
 - Clone this repository and run `pod install` in the cloned folder.
 - Open the `ChineseFlashcards.xcworkspace` file in XCode (not the `.xcodeproj` file).
+
+## Screenshots
+
+![Screenshot 1](/images/screenshot1.png?raw=true "Deck Detail View")
