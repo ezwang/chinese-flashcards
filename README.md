@@ -39,7 +39,10 @@ The second option allows you to show the answer after pressing the "No" button i
 ## Screenshots
 
 <p>
-  <img src="/images/screenshot1.png?raw=true" width="30%" />
-  <img src="/images/screenshot2.png?raw=true" width="30%" />
-  <img src="/images/screenshot3.png?raw=true" width="30%" />
+  <img src="/images/screenshot1.png?raw=true" width="32%" />
+  <img src="/images/screenshot2.png?raw=true" width="32%" />
+  <img src="/images/screenshot3.png?raw=true" width="32%" />
+  <img src="/images/screenshot4.png?raw=true" width="32%" />
+  <img src="/images/screenshot5.png?raw=true" width="32%" />
+  <img src="/images/screenshot6.png?raw=true" width="32%" />
 </p>
