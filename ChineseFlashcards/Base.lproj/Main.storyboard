@@ -21,35 +21,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-Wd-j4C">
-                                <rect key="frame" x="20" y="238" width="374" height="44.5"/>
+                                <rect key="frame" x="20" y="238" width="374" height="55.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mNw-dD-QP8">
-                                <rect key="frame" x="30" y="333.5" width="354" height="34"/>
+                                <rect key="frame" x="30" y="344.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vir-XY-cs3">
-                                <rect key="frame" x="30" y="302.5" width="354" height="21"/>
+                                <rect key="frame" x="30" y="313.5" width="354" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPR-Zq-8Gl">
-                                <rect key="frame" x="30" y="387.5" width="354" height="21"/>
+                                <rect key="frame" x="30" y="398.5" width="354" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9YV-BT-Xdr">
-                                <rect key="frame" x="30" y="418.5" width="354" height="34"/>
+                                <rect key="frame" x="30" y="429.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-yo-gLM">
-                                <rect key="frame" x="30" y="472.5" width="354" height="36"/>
+                                <rect key="frame" x="30" y="483.5" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -57,10 +57,14 @@
                                     <action selector="registerClickedWithButton:" destination="tNg-f6-uto" eventType="touchUpInside" id="1eQ-51-d0U"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SrX-eh-rUD">
+                                <rect key="frame" x="188.5" y="529.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fUY-2n-Z7F" firstAttribute="trailing" secondItem="Vir-XY-cs3" secondAttribute="trailing" constant="30" id="0Nq-qJ-dGD"/>
+                            <constraint firstItem="SrX-eh-rUD" firstAttribute="centerX" secondItem="RP3-ca-6qE" secondAttribute="centerX" id="0Y5-Jg-j6t"/>
                             <constraint firstItem="9YV-BT-Xdr" firstAttribute="top" secondItem="PPR-Zq-8Gl" secondAttribute="bottom" constant="10" id="1jW-qX-32a"/>
                             <constraint firstItem="fUY-2n-Z7F" firstAttribute="trailing" secondItem="zv8-Wd-j4C" secondAttribute="trailing" constant="20" id="3eA-D4-lX4"/>
                             <constraint firstItem="aEZ-yo-gLM" firstAttribute="top" secondItem="9YV-BT-Xdr" secondAttribute="bottom" constant="20" id="5fa-pR-8rj"/>
@@ -80,6 +84,7 @@
                             <constraint firstItem="mNw-dD-QP8" firstAttribute="top" secondItem="Vir-XY-cs3" secondAttribute="bottom" constant="10" id="fFM-cW-NFt"/>
                             <constraint firstItem="fUY-2n-Z7F" firstAttribute="trailing" secondItem="9YV-BT-Xdr" secondAttribute="trailing" constant="30" id="fNr-sw-Rtg"/>
                             <constraint firstItem="9YV-BT-Xdr" firstAttribute="leading" secondItem="fUY-2n-Z7F" secondAttribute="leading" constant="30" id="fv0-1h-paD"/>
+                            <constraint firstItem="SrX-eh-rUD" firstAttribute="top" secondItem="aEZ-yo-gLM" secondAttribute="bottom" constant="10" id="g5F-zN-PHy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fUY-2n-Z7F"/>
                     </view>
@@ -87,6 +92,7 @@
                     <connections>
                         <outlet property="fieldEmail" destination="mNw-dD-QP8" id="6eh-W6-NZJ"/>
                         <outlet property="fieldPassword" destination="9YV-BT-Xdr" id="3NU-tk-qKO"/>
+                        <outlet property="indicatorRegister" destination="SrX-eh-rUD" id="xPZ-Vw-xop"/>
                         <segue destination="mfg-xr-LBO" kind="presentation" identifier="deck" modalPresentationStyle="fullScreen" id="4MF-Vo-Hfa"/>
                     </connections>
                 </viewController>
@@ -103,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chinese Flashcards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eC-nP-Enb">
-                                <rect key="frame" x="20" y="188" width="374" height="49"/>
+                                <rect key="frame" x="20" y="188" width="374" height="61.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -490,13 +496,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKA-TE-lP5">
-                                <rect key="frame" x="20" y="194" width="374" height="56"/>
+                                <rect key="frame" x="20" y="194" width="374" height="70.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You've finished reviewing this card deck!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xl-tf-q1S">
-                                <rect key="frame" x="20" y="270" width="374" height="21"/>
+                                <rect key="frame" x="20" y="284.5" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -509,37 +515,37 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-Nd-uKu">
-                                <rect key="frame" x="20" y="340.5" width="112" height="56"/>
+                                <rect key="frame" x="20" y="352.5" width="112" height="70.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="48"/>
                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Cards Reviewed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzN-yX-JeT">
-                                <rect key="frame" x="132" y="351" width="262" height="35"/>
+                                <rect key="frame" x="132" y="365.5" width="262" height="44"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npL-dZ-N5l">
-                                <rect key="frame" x="20" y="395.5" width="112" height="56"/>
+                                <rect key="frame" x="20" y="416.5" width="112" height="70.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="48"/>
                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Success Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAU-iM-0VA">
-                                <rect key="frame" x="132" y="406" width="262" height="35"/>
+                                <rect key="frame" x="132" y="429.5" width="262" height="44"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GI-9R-LVw">
-                                <rect key="frame" x="20" y="450.5" width="112" height="56"/>
+                                <rect key="frame" x="20" y="480.5" width="112" height="70.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="48"/>
                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Average Tries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCq-07-iDw">
-                                <rect key="frame" x="132" y="461" width="262" height="35"/>
+                                <rect key="frame" x="132" y="493.5" width="262" height="44"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -699,46 +705,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aop-Gs-RK7">
-                                <rect key="frame" x="20" y="238" width="374" height="44.5"/>
+                                <rect key="frame" x="20" y="238" width="374" height="55.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-Zd-nnV">
-                                <rect key="frame" x="30" y="333.5" width="354" height="34"/>
+                                <rect key="frame" x="30" y="344.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikf-EF-XCT">
-                                <rect key="frame" x="30" y="302.5" width="354" height="21"/>
+                                <rect key="frame" x="30" y="313.5" width="354" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCn-cC-PVi">
-                                <rect key="frame" x="30" y="387.5" width="354" height="21"/>
+                                <rect key="frame" x="30" y="398.5" width="354" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-rS-ydy">
-                                <rect key="frame" x="30" y="418.5" width="354" height="34"/>
+                                <rect key="frame" x="30" y="429.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLw-aL-6EU">
-                                <rect key="frame" x="30" y="472.5" width="354" height="36"/>
+                                <rect key="frame" x="30" y="483.5" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="loginClickedWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLu-Hz-lFv"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eSM-nA-CcN">
+                                <rect key="frame" x="188.5" y="529.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Aop-Gs-RK7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1tY-o4-kjk"/>
                             <constraint firstItem="GvT-rS-ydy" firstAttribute="top" secondItem="QCn-cC-PVi" secondAttribute="bottom" constant="10" id="9GA-YP-ZfM"/>
+                            <constraint firstItem="eSM-nA-CcN" firstAttribute="top" secondItem="XLw-aL-6EU" secondAttribute="bottom" constant="10" id="IsI-L1-4Bn"/>
                             <constraint firstItem="QCn-cC-PVi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Spa-AP-hgA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aop-Gs-RK7" secondAttribute="trailing" constant="20" id="V6N-yK-g5N"/>
                             <constraint firstItem="XLw-aL-6EU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="VmM-N2-1wo"/>
@@ -754,6 +764,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XLw-aL-6EU" secondAttribute="trailing" constant="30" id="n4y-ya-Ki5"/>
                             <constraint firstItem="GvT-rS-ydy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="nHJ-cJ-p9w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GvT-rS-ydy" secondAttribute="trailing" constant="30" id="rDB-wT-Bp0"/>
+                            <constraint firstItem="eSM-nA-CcN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u9r-xd-gEZ"/>
                             <constraint firstItem="ikf-EF-XCT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="vdN-mj-5dc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -762,6 +773,7 @@
                     <connections>
                         <outlet property="fieldEmail" destination="fCg-Zd-nnV" id="F8k-6n-WOJ"/>
                         <outlet property="fieldPassword" destination="GvT-rS-ydy" id="9Kd-C8-44W"/>
+                        <outlet property="indicatorLogin" destination="eSM-nA-CcN" id="0mJ-q9-wEt"/>
                         <segue destination="mfg-xr-LBO" kind="presentation" identifier="deck" modalPresentationStyle="fullScreen" id="j8Y-iF-WQG"/>
                     </connections>
                 </viewController>
@@ -837,13 +849,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFt-RK-0Vo">
-                                <rect key="frame" x="20" y="20" width="374" height="44.5"/>
+                                <rect key="frame" x="20" y="20" width="374" height="55.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5R1-nW-oYB">
-                                <rect key="frame" x="0.0" y="125.5" width="414" height="682.5"/>
+                                <rect key="frame" x="0.0" y="136.5" width="414" height="671.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="5PZ-X0-Bbd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -851,7 +863,7 @@
                                 </activityIndicatorView>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vrO-Km-NXi">
-                                <rect key="frame" x="0.0" y="69.5" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="80.5" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -939,7 +951,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yx-8i-ZQM">
-                                <rect key="frame" x="20" y="64" width="374" height="44.5"/>
+                                <rect key="frame" x="20" y="64" width="374" height="55.5"/>
                                 <fontDescription key="fontDescription" name="IndieFlower" family="Indie Flower" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -975,26 +987,26 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Rj-Au-2I7">
-                                <rect key="frame" x="345" y="127.5" width="51" height="31"/>
+                                <rect key="frame" x="345" y="138.5" width="51" height="31"/>
                                 <connections>
                                     <action selector="onOfflineToggle:" destination="IfE-m6-5sn" eventType="valueChanged" id="Qsv-82-Fgf"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Offline Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHx-8Y-enb">
-                                <rect key="frame" x="20" y="128.5" width="325" height="29"/>
+                                <rect key="frame" x="20" y="139.5" width="325" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yiT-gp-3G7">
-                                <rect key="frame" x="345" y="178.5" width="51" height="31"/>
+                                <rect key="frame" x="345" y="189.5" width="51" height="31"/>
                                 <connections>
                                     <action selector="onOfflineToggle:" destination="IfE-m6-5sn" eventType="valueChanged" id="64g-JF-Cek"/>
                                     <action selector="onShowAnswerToggle:" destination="IfE-m6-5sn" eventType="valueChanged" id="UgS-aG-yOX"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;No&quot; Shows Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbz-01-8WR">
-                                <rect key="frame" x="20" y="179.5" width="325" height="29"/>
+                                <rect key="frame" x="20" y="190.5" width="325" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1115,7 +1127,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bI6-SG-5Ay"/>
+        <segue reference="4MF-Vo-Hfa"/>
         <segue reference="bKg-r3-18N"/>
         <segue reference="f2d-0L-NFg"/>
         <segue reference="eIf-d3-6hp"/>
