@@ -22,8 +22,16 @@ func getErrorMessage(code: Int) -> String {
         return "Email is already in use."
     case .weakPassword:
         return "Password is too weak."
+    case .unverifiedEmail:
+        return "Email is not verified."
+    case .missingEmail:
+        return "Email was not specified."
+    case .userNotFound:
+        return "No user found with that email."
+    case .userDisabled:
+        return "This account has been disabled."
     default:
-        return "An unknown authentication error occured."
+        return "An unknown authentication error occured (code: \(code))."
     }
 }
 
